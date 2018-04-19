@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        // 检查是否正在播放
+        var isPlaying =false; 
+        function play() {
+            var player = document.getElementById('test');
+            if (isPlaying) {
+                // 如果正在播放, 停止播放并停止读取此音乐文件
+                player.pause();
+                player.src = '';
+            } else {
+                player.src = '铃声.mp3';
+                player.play();
+            }
+            isPlaying = !isPlaying;//加上这句话就对了！
+        }
+    </script>
+</head>
+<body>
+<audio id='test' src="铃声.mp3" hidden="true" controls="controls" loop="false"></audio>
+   <button onclick='play();'>点击播放</button> 
+</body>
+</html>   

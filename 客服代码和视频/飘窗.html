@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<!-- 漂浮 -->
+<script type="text/javascript">
+    document.write("<div id='fudong01' style='position:absolute;z-index:50000;'><a onClick='setNone(fudong01)' style='position:absolute;right:0px;top:0px;cursor:pointer;display:block;width:48px;height:24px;font-size: 12px;color:#fff;text-align:center;background:#333;border:1px solid #999;overflow:hidden;font-family:宋体;'>×关闭</a><a href='http://www.nz86.com/singlepage/include/ailizhe/1.html' target=_blank><img src='http://img1.nz86.com/upload/picture/system/23/14/45/21136679891795153.png' border='0' /></a></div>");
+    function setNone(str_fd){str_fd.style.display="none";}
+    var m = 0,n = 0
+    var xin = true, yin = true
+    var step = 3
+    var delay = 100;//设置滚动时间
+    var obj=document.getElementById("fudong01")
+    function floatAD() {
+        var L=0;
+        var T=0;
+        var cw=document.documentElement.clientWidth||document.body.clientWidth;
+        var ch=document.documentElement.clientHeight||document.body.clientHeight;//处理浏览器对document.body的兼容问题
+        var R= (cw-obj.offsetWidth)/2
+        var B = ch-obj.offsetHeight;
+        n++;
+        var atop = 0;
+        obj.style.left = m + document.body.scrollLeft  + "px";
+        if(document.documentElement.scrollTop == 0){
+            atop = document.body.scrollTop;
+        }else{
+            atop = document.documentElement.scrollTop
+        }
+        obj.style.top = n + atop + "px"
+        m = m + step*(xin?1:-1)
+        console.log(m)
+        if (m < L) { xin = true; m = L}
+        if (m > R){ xin = false; m = R}
+        n = n + step*(yin?1:-1)
+        if (n < T) { yin = true; n = T }
+        if (n > B) { yin = false; n = B }
+    }
+    var itl= setInterval("floatAD()",delay)
+    obj.onmouseover=function(){clearInterval(itl)}
+    obj.onmouseout=function(){itl=setInterval("floatAD()", delay)}
+</script>
+</html>

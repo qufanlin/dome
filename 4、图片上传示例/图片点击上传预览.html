@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>图片点击上传</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        position: relative;
+        width: 1000px;
+        height: 600px;
+        margin: 30px auto;
+        box-shadow: 0 0 10px #666;
+    }
+    
+    #upLoad {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        margin-left: -75px;
+        margin-top: -50px;
+        text-align: center;
+    }
+    
+    .upLoad_btn {
+        width: 150px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #26f;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    #upLoad span {
+        line-height: 40px;
+    }
+    
+    #img_con li {
+        text-align: center;
+        list-style: none;
+        width: 200px;
+        height: 150px;
+        border: 1px solid #999;
+        float: left;
+        margin: 20px;
+    }
+    
+    #img_con li span {
+        float: left;
+        width: 100%;
+        height: 40px;
+        line-height: 60px;
+        margin-top: 110px;
+        color: #333;
+    }
+    
+    .upLoad {
+        float: left;
+        width: 200px;
+        height: 150px;
+        background-color: #eee;
+        margin: 20px;
+        font-size: 150px;
+        line-height: 130px;
+        color: #fff;
+        text-align: center;
+    }
+    
+    input {
+        display: none;
+    }
+    </style>
+    <script src="../jquery-3.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="upLoad">
+            <label>
+                <div class="upLoad_btn">上传图片</div>
+                <span>按住ctrl可多选</span>
+                <input type="file" id="myfile" multiple="true" onchange="upload(this)">
+            </label>
+        </div>
+        <ul id="img_con">
+          
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+	function upload(obj) {
+	    var sum = obj.files.length;
+	    var str = "";
+	    for (var i = 0; i < sum; i++) {
+	        var url = window.URL.createObjectURL(obj.files[i]);
+	        var name = obj.files[i].name;
+	        str += "<li style='background:url(" + url + ") no-repeat center;background-size:contain'><span>" + name + "</span></li>"
+	    }
+	    str += '<label><div class="upLoad" >+</div><input type="file" id="myfile" multiple="true" onchange="upload(this)"></label>';
+	    $("#upLoad").remove();
+	    $("label").remove();
+	    $("#img_con").append(str);
+
+	}
+</script>
+</html>
+
+

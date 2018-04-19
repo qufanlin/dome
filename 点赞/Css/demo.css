@@ -1,0 +1,86 @@
+body{
+    margin:0;
+    padding:0;
+}
+.praise{
+    width:40px;
+    height:40px;
+    margin: 50px auto;
+    cursor: pointer;
+    font-size: 12px;
+    text-align:center;
+    position: relative;
+}
+#praise{
+    width:40px;
+    height:40px;
+    margin:0 auto;
+}
+#praise-txt{
+    height:25px;
+    line-height:25px;
+    display: block;
+}
+.praise img{
+    width:40px;
+    height:40px;
+    margin: 0 auto;
+}
+.animation{
+    animation: myfirst 0.5s;
+}
+#add-num{
+    display:none;
+}
+.add-animation{
+    color: #000;
+    position:absolute;
+    top:-15px;
+    left: 10px;
+    font-size: 15px;
+    animation: mypraise 0.5s ;
+}
+.praise .hover , #add-num .add-animation.hover , #praise-txt.hover{
+    color: #EB4F38;
+}
+
+@keyframes myfirst
+{
+    0%{
+        width:40px;
+        height:40px;
+    }
+    50%{
+        width:50px;
+        height:50px;
+    }
+    100% {
+        width:40px;
+        height:40px;
+    }
+}
+
+@keyframes mypraise
+{
+    0%{
+        top:-15px;
+        opacity: 0;
+    }
+    25%{
+        top:-20px;
+        opacity: 1;
+    }
+    50%{
+        top:-25px;
+        opacity: 0.6;
+    }
+    75%{
+        top:-30px;
+        opacity: 0.3;
+    }
+    100% {
+        top:-35px;
+        opacity: 0;
+    }
+}
+

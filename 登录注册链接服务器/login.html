@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         *{ margin:0px;  padding:0px;  font-family:'Arial, Verdana, 宋体';}
+         a{text-decoration: none;}
+         li{ list-style: none;}
+         .public{width:100%;}
+         .welcome{
+             width:110px;
+             height:40px;
+             background:url('img/l-icon.png');
+             display: inline-block;
+             margin-left:40px;
+             position: absolute;
+             top:15px;
+         }
+         .header1{
+             margin:20px auto;
+             width:990px;
+             vertical-align: middle;
+             position: relative;
+         }
+         .w{height:475px;width:100%;background:rgb(233, 56, 84);margin-bottom: 10px;}
+         .hid{width:990px;height:100%;background:url('img/long-bg.png');position: relative;margin: 0px auto;}
+         .hid{width:990px;height:100%;background:url('img/long-bg.png');position: relative;margin: 0px auto;}
+
+
+
+
+        .long-box{  width: 346px;background:rgb(255, 255, 255); position: absolute;right:0px;top:60px;}
+        .long-box a,.links a, .ar-1 a{color:rgb(102, 102, 102);}
+         .links a{margin:0px 5px;font-size: 12px;}
+        .long-box a:hover,.links a:hover, .ar-1 a:hover{color:rgb(228, 57, 60);text-decoration: underline;}
+        .header{height:40px;border-bottom: solid  rgb(244, 244, 244) 1px;padding-top:15px;}
+        .header li{width:172px;float: left; text-align: center;color: rgb(102, 102, 102);cursor:pointer;font-size:18px;}
+        .header .font-color{color:rgb(228, 57, 60);}
+        .header li:hover{color:rgb(228, 57, 60);}
+        .header li:first-child{
+            border-right: solid 1px rgb(244, 244, 244);
+        }
+
+         .errInfo{padding:5px 0px 5px 15px;position: relative;margin-top:10px;height:18px;}
+         .flag{width:18px;height:16px;display: inline-block;background: url('img/long.png');display: none;vertical-align: top;}
+         .infomation{margin-left:10px;font-size: 12px;display: inline-block;position: relative;top:-2px;display: none;}
+
+        .lab{ width:38px;height:38px;text-align:center;display:inline-block;position:absolute;line-height: 38px;background-image: url('img/long.png'); }
+        .bg2{  background-position:-48px 0px;}
+        .login{  position: relative;  margin-bottom: 20px;margin-top: 10px;}
+        .login input{width:254px;padding:10px 0px 10px 50px;}
+        .content{ width:306px;padding: 0px 20px 0px 20px;}
+
+
+        .select{font-size:12px;}
+         input[type='checkbox']{display: inline-block;  vertical-align: middle;margin-bottom: 2px;margin-right: 3px;   }
+        .log-btn{height:31px;background: rgb(228, 57, 60);text-align: center; line-height: 31px;  cursor: pointer; margin-top: 15px;
+        }
+
+
+
+        .footer{ font-size:12px;height:50px;line-height: 50px;margin-top:20px;border-top:rgb(244, 244, 244) solid 1px;background: rgb(252, 252, 252);width:306px;padding: 0px 20px 0px 20px;}
+        .footer>li:nth-last-child(1){ float:right;}
+        .footer  li{  display: inline-block;font-size:12px;  text-align: center;cursor: pointer}
+        .footer b{width:16px;height:16px;background:url('img/long.png');display: inline-block;background-position: -104px -75px; vertical-align: middle;margin-right: 5px;}
+        .line{margin-left:15px;margin-right:10px;color:rgb(204, 204, 204);}
+
+
+
+        .lin{float:left;width:150px;}
+        .contantImg-image1{padding: 8px;border:solid 1px lightgray;margin-left:0px;margin-right:15px}
+        .contantImg{overflow: hidden;}
+        /*.contantImg-image2{margin-top:15px;}*/
+
+
+
+        .info{overflow: hidden;margin-left:40px;;margin-top:20px;}
+        .info>li{display:inline-block;font-size:12px;}
+        .info>li:nth-last-child(1){
+            border-left:solid 1px lightgray;padding-left:8px;
+        }
+
+
+        .content-foot{overflow: hidden;width:306px;padding: 0px 20px 0px 20px;line-height: 50px;background:rgb(253, 253, 253);padding-top: 10px;padding-bottom: 10px;border-top:rgb(244, 244, 244) solid 1px; margin-top:20px;}
+        .content-foot b{background:url('img/long-footer.png');width:25px;height:25px;display: inline-block;vertical-align: middle;position:absolute;}
+        .content-foot span{padding-left:35px;color: rgb(153, 153, 153);}
+        .content-foot li{float:left;font-size:13px;position: relative;height:25px;line-height: 25px;margin-right:30px;}
+
+         .links,.copyright{margin:10px auto;width: 990px;text-align: center}
+
+        .ar-1 b{background:url('img/q-icon.png');width:18px;height:14px;display: inline-block;vertical-align: middle;margin-right: 5px;}
+        .ar-1{float:right;font-size:12px;vertical-align: bottom}
+        .ar{width:990px;margin:0px auto;overflow: hidden;}
+         .copyright{color:rgb(102, 102, 102);}
+         @keyframes myanimate {
+            0% {
+                margin-left: 0px;
+            }
+            100% {
+                margin-left: 80px;
+
+            }
+        }
+        @keyframes myanimate1 {
+            0%{
+                margin-left:80px;
+            }
+            100%{
+                margin-left:0px;
+
+            }
+
+        }
+    </style>
+</head>
+<body >
+     <div class="punlic">
+         <div class="header1" >
+             <a href="#"><img src="img/logo.png" alt=""></a>
+             <b class="welcome"></b>
+         </div>
+     </div>
+    <div class="w">
+             <div class="hid">
+
+
+                 <div class="long-box">
+
+                     <div class="header">
+                         <li  class="font-color"><span>账户登录</span></li>
+                         <li ><span>扫码登录</span></li>
+
+                     </div>
+                     <div style="clear: both;"></div>
+                     <div class="wrap" >
+                         <div  class="content">
+                             <div class="errInfo">
+                                 <span class="flag"></span>
+                                 <span class="infomation"></span>
+                             </div>
+                             <div class="login">
+                                 <label for="logname" class="lab bg1"></label>
+                                 <input type="text" id="logname" placeholder="邮箱/用户名/已验证的手机">
+                             </div>
+                             <div class="login">
+                                 <label for="pwd" class="lab bg2"></label>
+                                 <input type="password" id="pwd" placeholder="请输入密码">
+                             </div>
+                             <div class="select">
+                                 <span><input type="checkbox" id="denlu"><label for="denlu">自动登录</label></span>
+                                 <a href="" style="float:right;font-size:12px;" >忘记密码</a>
+                             </div>
+                             <div class="log-btn">
+                                 登录
+                             </div>
+
+                         </div>
+                         <div>
+                             <div class="footer">
+                                 <li><a href="#">京东钱包</a><span class="line">|</span></li>
+                                 <li><a href="#">QQ</a> <span class="line">|</span></li>
+                                 <li><a href="#">微信</a></li>
+                                 <li><a href="rejist.html"><b></b>立即注册</a></li>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="wrap" style="display: none">
+                         <div class="contant1">
+                             <div class="contantImg">
+                                 <div class="contantImg-image1 lin"><img src="img/erwei.png" alt="我还不想出来"></div>
+                                 <div class="contantImg-image2 lin"><img src="img/info.png" alt="我还不想出来"></div>
+                             </div>
+                             <div class="info">
+                                 <li ><a href="">打开新版 <span style="color:rgb(228, 57, 60);">学成手机</span> ，扫描二维码</a></li>
+                                 <li><a href="">使用帮助</a></li>
+                             </div>
+                             <div class="content-foot">
+                                 <li><b></b><span>免输入</span></li>
+                                 <li><b></b><span>更快</span></li>
+                                 <li><b></b><span>更安全</span></li>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+    </div>
+     <div id="public">
+         <div class="ar">
+             <div class="ar-1">
+                 <a href="//surveys.jd.com/index.php?r=survey/index/sid/568245/lang/zh-Hans" target="_blank" class="q-link" style="outline: rgb(109, 109, 109) none 0px;"><b></b>登录页面，调查问卷</a>
+             </div>
+         </div>
+         <div class="links">
+             <a rel="nofollow" target="_blank" href="//www.jd.com/intro/about.aspx">
+                 关于我们
+             </a>
+             |
+             <a rel="nofollow" target="_blank" href="//www.jd.com/contact/">
+                 联系我们
+             </a>
+             |
+             <a rel="nofollow" target="_blank" href="//zhaopin.jd.com/">
+                 人才招聘
+             </a>
+             |
+             <a rel="nofollow" target="_blank" href="//www.jd.com/contact/joinin.aspx">
+                 商家入驻
+             </a>
+             |
+             <a rel="nofollow" target="_blank" href="//www.jd.com/intro/service.aspx">
+                 广告服务
+             </a>
+             |
+             <a rel="nofollow" target="_blank" href="//app.jd.com/">
+                 手机京东
+             </a>
+             |
+             <a target="_blank" href="/links.vm/club.jd.com/links.aspx">
+                 友情链接
+             </a>
+             |
+             <a target="_blank" href="//media.jd.com/">
+                 销售联盟
+             </a>
+             |
+             <a href="//club.jd.com/" target="_blank">
+                 京东社区
+             </a>
+             |
+             <a href="//gongyi.jd.com" target="_blank">
+                 京东公益
+             </a>
+             |
+             <a target="_blank" href="//en.jd.com/" clstag="pageclick|keycount|20150112ABD|9">English Site</a>
+         </div>
+         <div class="copyright">
+             Copyright&nbsp;©&nbsp;2004-2016&nbsp;&nbsp;京东JD.com&nbsp;版权所有
+         </div>
+     </div>
+
+    <script src="./js/jquery-3.1.0.min.js"></script>
+    <script>
+        /***
+         * 定义两个图片变量；
+         */
+        var img1;
+        var img2;
+        $('.contantImg').mouseenter(function(){
+                        img1.css({
+                            animation:'myanimate1 .1s',
+                            'animation-fill-mode': 'forwards',
+                            'margin-left':'100px'
+                        });
+                         setTimeout(function(){
+                             if(img1.css('margin-left')=='0px')
+
+                             {img2.css('display','inline-block');}
+                         },200);
+                    });
+        $('.contantImg').mouseleave(function() {
+                    img1.css({
+                        animation:'myanimate .2s',
+                        'animation-fill-mode': 'forwards',
+                        'margin-left':'0px'
+                    });
+                    img2.css('display','none');
+                });
+        $('.header li').click(function(){
+            setTimeout(function(){
+                img1= $('.contantImg-image1');
+                img2 = $('.contantImg-image2');
+                img1.css({
+                    animation:'myanimate .2s',
+                    'animation-fill-mode': 'forwards',
+                    'margin-left':'0px'
+
+                });
+                img2.css('display','none');
+            },3000);
+            $(this).addClass('font-color').siblings().removeClass('font-color');
+            for(let i = 0;i< $('.long-box .wrap').length;i++ ){
+//               设置图片的初始化；
+
+                if(i==$(this).index()){
+                    $('.long-box .wrap').eq($(this).index()).css('display','block');
+                }
+                else{
+                    $('.long-box .wrap').eq(i).css('display','none');
+                }
+
+            }
+
+        })
+
+
+        $('.login input').focus(function(){
+                 this.previousSibling.previousSibling.style.backgroundPositionY = '-48px';
+        });
+        $('.login input').blur(function(){
+            this.previousSibling.previousSibling.style.backgroundPositionY  = '0px'
+        });
+
+
+        /***
+         *   console.log($(this).attr('checked'));
+         *   对于checked这个属性，只会获取页面立即加载时候的状态；
+         *   多选按钮被选择后出现的提示框；
+         */
+
+
+        $('#denlu').click(function(){
+
+            if($('#denlu')[0].checked){
+                $('.infomation').text('公共场所不建议自动登录，以防账号丢失');
+                $('.flag').css({display:'inline-block',backgroundPosition: '-104px -23px'});
+                $('.infomation').css('display','inline-block');
+                $('.errInfo').css({
+                    backgroundColor: 'rgb(255, 246, 210)',
+                    border:'1px solid  rgb(255, 229, 125)'
+                });
+
+            }
+            else{
+                $('.flag').css('display','none');
+                $('.infomation').css('display','none');
+                $('.errInfo').css({
+                    backgroundColor: '',
+                    border:''
+                });
+            }
+
+        })
+        /***
+         * 睁着验证函数；
+         */
+        function chenckUser(){
+            /***
+             *
+             * @type {RegExp}
+             * 分别是验证手机号，邮箱，和用户名的正则；
+             */
+            var rep1 =  /^[a-zA-z]\w{3,15}$/;
+            var rep2 = /^1\d{10}$/;
+            var rep3 = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+            var str = $('#logname').val();
+//            先判断是否为空；
+            if(str) {
+                if (!(rep1.test(str) || rep2.test(str) || rep3.test(str))) {
+                    $('.infomation').text('你输入的用户名格式不正确');
+                    seterrInfo();
+                }
+            }
+            else{
+                $('.infomation').text('用户名不能够为空');
+                seterrInfo();
+
+            }
+        }
+        $('#logname').blur(function(){
+            chenckUser();
+        });
+        $('#logname').focus(function(){
+            $('.flag').css('display','none');
+            $('.infomation').css('display','none');
+            $('.errInfo').css({
+                backgroundColor: '',
+                border:''
+            });
+
+        });
+        function seterrInfo(){
+            $('.flag').css({
+                display:'inline-block',
+                backgroundPosition: '-103px -48px'
+
+            });
+            $('.infomation').css('display','inline-block');
+            $('.errInfo').css({
+                backgroundColor: 'rgb(255, 235, 235)',
+                border:'1px solid  rgb(250, 204, 198)'
+            });
+        }
+        $('.log-btn').click(function(){
+            var data = {
+                userInfo:$('#logname').val(),
+                pwd:$('#pwd').val()
+            };
+            var jsonStr = JSON.stringify(data);
+            $.ajax({
+                type:'post',
+                url:'http://localhost:8000/?myUrl=user.txt',
+                dataType:'jsonp',
+                data:data,
+                success:function(data){
+                    console.log(data);
+                    $('.flag').css({display:'inline-block',backgroundPosition: '-104px -23px'});
+                    $('.infomation').css('display','inline-block');
+                    $('.errInfo').css({
+                        backgroundColor: 'rgb(255, 246, 210)',
+                        border:'1px solid  rgb(255, 229, 125)'
+                    });
+                    if(data){
+                        $('.infomation').text('登录成功，马上跳转');
+                        setTimeout(function(){
+                            window.location.href = 'http://localhost:63342/%E5%AD%A6%E6%88%90%E6%95%99%E8%82%B2/crouse.html'
+                        },2000);
+
+                    }
+                    else{
+                        $('.infomation').text('密码和用户名不匹配');
+                    }
+                },
+                error:function(err){
+                    console.log(err);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

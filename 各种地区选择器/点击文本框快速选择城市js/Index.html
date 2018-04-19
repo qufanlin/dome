@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>点击文本框快速选择城市js特效代码</title>
+<meta name="keywords" content="js特效,文本框,城市选择" />
+<meta name="description" content="点击文本框快速选择城市js特效代码。" />
+<!-- 引入css和js即可 -->
+<link rel="stylesheet" href="css/cityselect.css">
+<script type="text/javascript" src="js/cityselect.js"></script>
+
+<style type="text/css">
+.demo{width:220px;margin:20px auto;}
+</style>
+
+
+</head>
+<body>
+<div class="demo">
+
+	<!-- 在输入框加入id -->
+	<input type="text" class="cityinput" id="citySelect" placeholder="请输入目的地">
+	
+	<!-- 以下仅测试IE6下的状况,不用管它 -->
+	<br/><br/>
+	<select name="IE6">
+		<option>测试IE6</option>
+		<option>2</option>
+		<option>3</option>
+	</select>
+</div>
+
+<!-- 实例化 -->
+<script type="text/javascript">
+var test=new Vcity.CitySelector({input:'citySelect'});
+</script>
+
+<!-- 使用三步: 1.引入css和js文件;2.在需要的输入框加id;3.js创建一个实例,需要传入输入框id; -->
+<script type="text/javascript">
+function stopss(){
+   return false;
+}
+document.oncontextmenu=stopss;
+</script>
+</body>
+</html>
+ 

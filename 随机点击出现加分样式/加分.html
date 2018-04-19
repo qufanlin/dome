@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script src='jquery-3.1.0.min.js'></script>
+    <style>
+    html,
+    body {
+        /*background: #000;*/
+        font-size: 14px;
+        font-family: "microsoft yahei";
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
+    
+    .tip {
+        text-align: center;
+        padding-top: 10%;
+        font-size: 2em;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="tip">
+        点击页面任意位置查看效果
+    </div>
+</body>
+<script>
+$("html").on("click", function(e) {
+    anp(e);
+})
+
+function anp(e) {
+    /* 产生生成的随机分数 */ 
+    var n = Math.round(Math.random() * 10);
+    /* 创建一个<b标签>，在49行添加到 html中 */ 
+    var i = $("<b>").text("+" + n);
+    var x = e.clientX,
+        y = e.clientY;
+    i.css({
+        top: y - 20,
+        left: x,
+        position: "absolute",
+        color: "#E94F06"
+    });
+    $("html").append(i);
+    i.animate({
+        top: y - 180,
+        opacity: 0,
+        "font-size": "1.4em"
+    }, 1500, function() {
+        i.remove();
+    });
+}
+</script>
+
+</html>

@@ -1,0 +1,13 @@
+  * {
+        margin: 0;
+    }
+
+    #ad {
+        width: 250px;
+        height: 250px;
+       /*  background-color: rgb(133, 133, 133); */
+        font-size: 50px;
+        position:fixed;
+        color: rgb(0, 0, 0);
+        line-height: 50px;
+    }

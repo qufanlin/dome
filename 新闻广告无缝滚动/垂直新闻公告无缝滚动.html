@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<title>垂直新闻公告无缝滚动</title>
+<style type=text/css>
+#demo {
+  overflow:hidden;
+  height:150px;
+  width:350px; 
+  border:1px solid #dde5bc;
+}
+#demo a {
+  /*中文12px 英文16px 大河马字体*/
+  font: 12px/16px tahoma;
+  display: block;
+  text-decoration: none;
+  color: #4a551c;
+  padding-left: 2px;
+  text-align: left;
+}
+#demo a:hover {
+  color: #ff6600;
+}
+</style>
+<script>
+window.onload=function(){
+  var demo = document.getElementById("demo");
+  var demo2 = document.getElementById("demo2");
+  var demo1 = document.getElementById("demo1");
+  demo2.innerHTML = demo1.innerHTML;
+ 
+  function Marquee() {
+    if (demo2.offsetTop - demo.scrollTop <= 0) {
+      demo.scrollTop -= demo1.offsetHeight;
+    }
+    else {
+      demo.scrollTop++;
+    }
+  }
+ 
+  var MyMar = setInterval(Marquee, 50);
+  demo.onmouseover = function () {
+    clearInterval(MyMar);
+  };
+  demo.onmouseout = function () {
+    MyMar = setInterval(Marquee, 50);
+  };
+}
+</script>
+</head>
+<body>
+<div id="demo">
+  <div id="demo1">
+    <a href="#">You're on the phone with your girlfriend, She's upset</a>
+    <a href="#">she's going off about something that you said</a>
+    <a href="#">‘Cause she doesn't get your humour like I do</a>
+    <a href="#">I'm in the room, it's a typical Tuesday night</a>
+    <a href="#">I'm listening to the kind of music she doesn't like</a>
+    <a href="#">And she'll never know your story like I do</a>
+    <a href="#">But she wears short skirts, I wear T-shirts</a>
+    <a href="#">She's cheer captain and I'm on the bleachers</a>
+    <a href="#">Dreaming about the day when you wake up and find</a>
+    <a href="#">That what you're lookin for has been here the whole time</a>
+    <a href="#">If you could see that I'm the one who understands you</a>
+    <a href="#">Been here all along so why can't you see?</a>
+    <a href="#">You belong with me</a>
+  </div>
+  <div id="demo2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+    <canvas id="canvas" width="150" height="50"></canvas>
+<script>
+    //随机生成一个最大值和一个最小值的函数
+    function randomNum(min,max){
+        return Math.floor(Math.random()*(max-min)+min);
+    }
+    //随机生成一个颜色的函数
+    function randomColor(min,max){
+        var _r = randomNum(min,max);
+        var _g = randomNum(min,max);
+        var _b = randomNum(min,max);
+        return "rgb("+_r+","+_g+","+_b+")";
+    }
+    document.getElementById("canvas").onclick = function(e){
+        e.preventDefault();
+        drawPic();
+    };
+    //绘制验证码的函数
+    function drawPic(){
+        var $canvas = document.getElementById("canvas");
+        //生成验证码的源数据
+        var _str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        //初始化验证码
+        var _picTxt = "";
+        //验证码的长度
+        var _num = 6;
+        //获取canvas的宽和高
+        var _width = $canvas.width;
+        var _height = $canvas.height;
+        var ctx = $canvas.getContext("2d");
+        //绘制验证码的文字对齐方式
+        ctx.textBaseline = "bottom";
+        //绘制canvas的颜色
+        ctx.fillStyle = randomColor(180,240);
+        //绘制canvas
+        ctx.fillRect(0,0,_width,_height);
+        //绘制验证码
+        for(var i=0; i<_num; i++){
+            var x = (_width-10)/_num*i+10;
+            var y = randomNum(_height/2,_height);
+            var deg = randomNum(-45,45);
+            var txt = _str[randomNum(0,_str.length)];
+            _picTxt += txt;
+            ctx.fillStyle = randomColor(10,100);
+            ctx.font = randomNum(16,40)+"px SimHei";
+            ctx.translate(x,y);
+            ctx.rotate(deg*Math.PI/180);
+            ctx.fillText(txt, 0,0);
+            ctx.rotate(-deg*Math.PI/180);
+            ctx.translate(-x,-y);
+        }
+        //随机画num条干扰线
+        for(var i=0; i<_num; i++){
+            ctx.strokeStyle = randomColor(90,180);
+            ctx.beginPath();
+            ctx.moveTo(randomNum(0,_width), randomNum(0,_height));
+            ctx.lineTo(randomNum(0,_width), randomNum(0,_height));
+            ctx.stroke();
+        }
+        //随机生成_num*10个干扰点
+        for(var i=0; i<_num*10; i++){
+            ctx.fillStyle = randomColor(0,255);
+            ctx.beginPath();
+            ctx.arc(randomNum(0,_width),randomNum(0,_height), 1, 0, 2*Math.PI);
+            ctx.fill();
+        }
+        return _picTxt;
+    }
+    drawPic();
+</script>
+</body>
+</html>

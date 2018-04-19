@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--经典的拼图游戏，使用面向过程的方法实现。整个地图是一个4*4的table，通过控制td的background-position来让每个cell显示不同的图像。鼠标点击时，如果td旁边有背景为空的td，则将两个td的背景图互换，借此造成运动错觉。-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>拼图</title>
+    <style>
+    table {
+        margin: 100px auto;
+        background: #fff;
+        border: 10px solid #d35330;
+    }
+    
+    td {
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #CCC;
+        cursor: pointer;
+        background: url(firefox.jpg) no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+    reset(4);
+
+    function reset(n) {
+        var table = document.createElement('table');
+        var oTb = document.createElement('tbody');
+        var arr = [];
+        var num = 0;
+        table.cellSpacing = '0';
+        for (var i = 0; i < n; i++) {
+            var oTr = document.createElement('tr');
+            for (var j = 0; j < n; j++) {
+                num++;
+                var oTd = document.createElement('td');
+                var json = {
+                    seq: num,
+                    bg: -100 * j + 'px ' + -100 * i + 'px'
+                }
+                arr.push(json)
+                oTr.appendChild(oTd);
+            }
+            oTb.appendChild(oTr);
+        }
+        table.appendChild(oTb);
+        document.body.appendChild(table);
+        var aTd = oTb.getElementsByTagName('td');
+        aTd[aTd.length - 1].style.opacity = 0;
+        for (var i = 0; i < aTd.length; i++) {
+            aTd[i].json = arr[i];
+            aTd[i].style.backgroundPosition = aTd[i].json.bg;
+        }
+        var rows = oTb.rows;
+        for (var i = 0; i < 4; i++) {
+            for (var j = 0; j < 4; j++) {
+                rows[i].cells[j].Y = i;
+                rows[i].cells[j].X = j;
+                rows[i].cells[j].onclick = function() {
+                    var arr = [
+                        [this.Y - 1, this.X],
+                        [this.Y, this.X + 1],
+                        [this.Y + 1, this.X],
+                        [this.Y, this.X - 1],
+                    ];
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i][0] < 0 || arr[i][1] < 0 || arr[i][0] > 3 || arr[i][1] > 3) continue;
+                        if (rows[arr[i][0]].cells[arr[i][1]].style.opacity == '0') {
+                            rows[arr[i][0]].cells[arr[i][1]].style.opacity = 1;
+                            this.style.opacity = 0;
+                            var jsoner = this.json;
+                            this.json = rows[arr[i][0]].cells[arr[i][1]].json;
+                            rows[arr[i][0]].cells[arr[i][1]].json = jsoner;
+                            this.style.backgroundPosition = this.json.bg;
+                            rows[arr[i][0]].cells[arr[i][1]].style.backgroundPosition = rows[arr[i][0]].cells[arr[i][1]].json.bg;
+                        }
+                    }
+                    win();
+                };
+            }
+            setTimeout(function() {
+                var iAlpha = 100;
+                var sp = -10;
+                var timer = setInterval(function() {
+                    iAlpha += sp;
+                    oTb.style.opacity = iAlpha / 100;
+                    if (iAlpha <= 0) {
+                        sp = -sp;
+                        ranPic();
+                    }
+                    if (iAlpha > 100) clearInterval(timer);
+
+                }, 15);
+            }, 3000);
+
+            function ranPic() {
+
+                arr.sort(function() {
+                    return Math.random() - 0.5;
+                });
+                for (var i = 0; i < aTd.length; i++) {
+                    aTd[i].json = arr[i];
+                    aTd[i].style.backgroundPosition = aTd[i].json.bg;
+                }
+            }
+        }
+
+        function win() {
+            var aJson = [];
+            for (var i = 0; i < aTd.length; i++) {
+                aJson.push(aTd[i].json.seq);
+            }
+            for (var i = 0; i < aJson.length - 1; i++) {
+                if (aJson[i] > aJson[i + 1]) return;
+            }
+            for (var i = 0; i < aTd.length; i++) {
+                aTd[i].style.opacity = 1;
+            }
+            alert('胜利！');
+            reset(5);
+        }
+    }
+    </script>
+</body>
+
+</html>

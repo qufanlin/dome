@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #mycanvas {
+            position: absolute;
+            top: 100px;
+            left: 700px;
+        }
+
+        #img {
+            position: absolute;
+            top: 350px;
+            left: 1100px;
+        }
+
+        #dream {
+            position: absolute;
+            width: 200px;
+            height: 400px;
+            top: 600px;
+            left: 850px;
+            color: white;
+        }
+
+        #wishWall {
+            position: absolute;
+            top: 100px;
+            left: 550px;
+            z-index: 100;
+            width: 1100px;
+            height: 350px;
+            color: yellow;
+        }
+
+        #wishWall > div {
+            position: absolute;
+            left: 0px;
+            z-index: 100;
+        }
+
+        #content {
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            width: 210px;
+            height: 900px;
+            font-size: 30px;
+            color: lightslategrey;
+        }
+
+        #audio {
+            position: absolute;
+            top: 920px;
+            left: 1200px;
+        }
+    </style>
+</head>
+<body>
+<svg width="1900" height="1000">
+    <rect x="200" y="50" width="1500" height="900" fill="black"></rect>
+    <!--//月亮虚化-->
+    <defs>
+        <filter id="f1">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+        </filter>
+    </defs>
+    //生成一个月亮
+    <circle r="80" cx="400" cy="200" fill="white" filter="url(#f1)">
+        <animate attributeName="r" from="80" to="83" begin="0s" dur="4s" fill="freeze" repeatCount="indefinite"
+                 values="80;83;80"/>
+        //改变圆的透明度
+        <animate attributeName="fill-opacity" attributeType="CSS" values="1;0.9;1" begin="0s" dur="4s"
+                 repeatCount="indefinite"/>
+    </circle>
+    //文字
+    <text font-family="幼圆" y="400" x="400" fill="white">
+        静
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="0s" dur="3s"/>
+        <animate id="a1" attributeName="font-size" fill="freeze" from="8" to="30" begin="0s" dur="3s"/>
+    </text>
+    <text y="400" x="440" fill="white">
+        待
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="3s" dur="3s"/>
+        <animate id="a2" attributeName="font-size" fill="freeze" from="8" to="30" begin="a1.end" dur="3s"/>
+    </text>
+    <text y="400" x="480" fill="white">
+        追
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="6s" dur="3s"/>
+        <animate id="a3" attributeName="font-size" fill="freeze" from="8" to="30" begin="a2.end" dur="3s"/>
+    </text>
+    <text y="400" x="520" fill="white">
+        忆
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="9s" dur="3s"/>
+        <animate id="a4" attributeName="font-size" fill="freeze" from="8" to="30" begin="a3.end" dur="3s"/>
+    </text>
+    <text y="400" x="560" fill="white">
+        往
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="12s" dur="3s"/>
+        <animate id="a5" attributeName="font-size" fill="freeze" from="8" to="30" begin="a4.end" dur="3s"/>
+    </text>
+    <text y="400" x="600" fill="white">
+        事
+        <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="15s" dur="3s"/>
+        <animate id="a6" attributeName="font-size" fill="freeze" from="8" to="30" begin="a5.end" dur="3s"/>
+    </text>
+    //第五行
+    <text font-family="方正姚体" font-size="25" y="540" x="450" fill="white">
+        <tspan dx="-25 -25 -25 -20 -15 -25 " dy="40 40 40 40 40 40 ">中秋月|晏殊</tspan>
+        <animate attributeName="x" fill="freeze" from="450" to="500" begin="16s" dur="4s"/>
+    </text>
+    //第四行
+    <text font-family="方正姚体" font-size="25" y="500" x="500" fill="white">
+        <tspan dx="-25 -25 -25 -25 -25 -25 -25" dy="40 40 40 40 40 40 40">玉蟾清冷桂花孤</tspan>
+        <animate attributeName="x" fill="freeze" from="500" to="550" begin="12s" dur="4s"/>
+    </text>
+    //第三行
+    <text font-family="方正姚体" font-size="25" y="500" x="550" fill="white">
+        <tspan dx="-25 -25 -25 -25 -25 -25 -25" dy="40 40 40 40 40 40 40">未必素娥无怅恨</tspan>
+        <animate attributeName="x" fill="freeze" from="550" to="600" begin="8s" dur="4s"/>
+    </text>
+    //第二行
+    <text font-family="方正姚体" font-size="25" y="500" x="600" fill="white">
+        <tspan dx="-25 -25 -25 -25 -25 -25 -25" dy="40 40 40 40 40 40 40">此夕羁人独向隅</tspan>
+        <animate attributeName="x" fill="freeze" from="600" to="650" begin="4s" dur="4s"/>
+    </text>
+    //第一行
+    <text font-family="方正姚体" font-size="25" y="500" x="650" fill="white">
+        <tspan dx="-25 -25 -25 -25 -25 -25 -25" dy="40 40 40 40 40 40 40">十轮霜影转庭梧</tspan>
+        <animate attributeName="x" fill="freeze" from="650" to="700" begin="0s" dur="4s"/>
+    </text>
+</svg>
+<canvas id="mycanvas" width="1000" height="300"></canvas>
+<div id="img">
+    <img src="images/2.jpg" alt="">
+</div>
+<div id="dream">
+    写下你的许愿<br><textarea class="content"></textarea><br>
+    许愿人<br><input type="text" class="name"><br>
+    <input type="button" id="divId" class="btn" value="确定" onclick="btnclick()"><br>
+</div>
+<div id="wishWall">
+</div>
+<div id="content"> &nbsp; 许愿墙：<br>
+    <p class="result"></p></div>
+<audio id="audio" src="You Belong To Me.mp3" controls="controls" controls loop autoplay preload="auto"></audio>
+</body>
+<script>
+    var mycanvas = document.getElementById("mycanvas");
+    var ctx = mycanvas.getContext("2d");
+    //globalAlpha 全局透明度,随机小点点
+    ctx.globalAlpha = "0.5";
+    for (var i = 0; i < 50; i++) {
+        ctx.fillStyle = "#FFEFD5";
+        ctx.beginPath();
+        ctx.arc(mycanvas.width * Math.random(), mycanvas.height * Math.random(), Math.random() * 5, 0, Math.PI * 2);
+        ctx.shadowOffsetX = "2";
+        ctx.shadowOffsetY = "2";
+        ctx.shadowBlur = "10";
+        ctx.shadowColor = "white";
+        ctx.fill();
+    }
+</script>
+<script>
+    var i = 0;
+    var resBtn = document.querySelector('.result');
+    var btn = document.querySelector('.btn');
+    document.body.addEventListener('click', function (e) {
+        if (e.target.tagName == 'DIV') {
+            var content = document.querySelector(".name").value;
+            resBtn.innerHTML += read(content) + '<br>';
+        }
+    });
+
+    function btnclick() {
+        write();
+        random();
+    }
+
+    function read(obj) {
+        var json = localStorage.getItem(obj);
+        return json;
+    }
+
+    //div随机出现
+    function random() {
+        var thisWidth = getRandom(1100); //随机位置x
+        var thisHeigth = getRandom(350); //随机位置y
+        document.getElementById('divz' + i).style.left = thisWidth + 'px';
+        document.getElementById('divz' + i).style.top = thisHeigth + 'px';
+    }
+
+    //生成0~max之间的随机数
+    function getRandom(max) {
+        var value = parseInt(Math.random() * (max + 1), 10);
+        return value;
+    }
+
+    function write() {
+        var name = document.querySelector('.name');
+        var content = document.querySelector('.content');
+        var json = {};
+        json.name = name.value;
+        json.content = content.value;
+        localStorage.setItem(json.name, json.content);
+        //生成一个星星
+
+        //读取的方法
+        var img = document.createElement('div');
+        var wishWall = document.querySelector('#wishWall');
+        i += 1;
+        img.id = "divz" + i;
+        img.style.width = '20px';
+        img.style.height = '20px';
+        img.style.borderRadius = '10px';
+        img.style.backgroundColor = 'pink';
+        img.value = json.name;
+        wishWall.appendChild(img);
+    }
+</script>
+<script src="jquery-3.1.0.min.js"></script>
+</html>

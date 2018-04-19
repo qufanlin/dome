@@ -1,0 +1,50 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.main1{
+	width:100%;
+	position: relative;
+	margin: 0px;
+}
+.nav{
+	width:960px;
+	/*height:300px;*/
+	padding-top:32px;
+	padding-bottom: 22px;
+	margin:0px auto;
+
+}
+.navImg{
+	float:left;
+	width:181px;
+	height:32px;
+	position: relative;
+	top:8px;
+
+
+}
+.navLink{
+	text-decoration:none;
+	display: block;
+	width:127px;
+	height:40px;
+	line-height: 40px;
+	font-size: 18px;
+	font-family:'微软雅黑'; 
+	float:left;
+	text-align: center;
+	cursor:pointer;
+	border-radius: 18px;
+	color:black;
+
+}
+.navLink:hover{
+     background: rgb(2,179,137);
+     color:white;
+	 text-decoration:none;
+}
+.a1{
+	margin-left:95px;
+	
+}				

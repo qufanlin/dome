@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>朗读文本</title>
+	<script src="../jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		div{
+			border: 1px solid #ddd;
+			margin-bottom: 20px;
+		}	
+
+		button{
+			margin: 20px;
+			width: 80px;
+			height: 34px;
+		}
+
+		.txt1{
+			width: 500px;
+			height: 200px;
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<textarea class="txt1" cols="30" rows="10"></textarea>
+		<button class="btn">朗&nbsp;读</button><br><br>
+	</div>
+	<p>测试文本：</p>
+	<p>垚，鱻，羴，犇，赑，毳，掱，惢，畾</p>
+	<p>读音：垚（yao），鱻（xian），羴（shan），犇（ben），赑（bi），毳（cui），掱（pa），惢（rui），畾（lei）</p>
+	<p>Standing in the hall of fame
+	<p>站在名人堂中</p>
+	<p>And the world's gonna know your name</p>
+	<p>全世界都会知道你的名字</p>
+	<p>Cause you're burning with the brightest flame</p>
+	<p>因为你为最明亮的火焰所燃</p>
+	<p>And the world's gonna know your name</p>
+	<p>全世界都会知道你的名字</p>
+	<p>And you'll be on the walls of the hall of fame</p>
+	<p>而你会位列名人堂之墙</p>
+	<p>You could go the distance, you can run the mile</p>
+</body>
+<script>
+	;(function(w){
+	
+	var DEFIND_SRC = "http://tts.baidu.com/text2audio?";
+	
+	
+	var speech = function (options){
+		return new speech.fn.init(options);
+	}
+	
+	
+	speech.fn = speech.prototype = {
+		init : function(options){
+			if(options){
+				
+				if(typeof options == "string") this.txt = options;
+				
+				this.speek(true);
+			}
+			return this;
+		},
+		resrc : function(objs){
+			objs = objs || {};
+			
+			var options = {
+				"lan" : objs.lan || "zh",
+				"ie" : objs.ie || "UTF-8",
+				"spd" : objs.spd || "4",
+				"text" : encodeURI(this.txt)
+			}
+			
+			var src = DEFIND_SRC;
+			
+			for(var name in options) src += name + "=" + options[name]+"&";
+			
+			return src.substr(0 , src.length - 1);
+		},
+		speek : function(isspeek){
+			if(!this.txt) return this;
+			var aud = this.audioer = this.audioer || document.createElement("audio");
+			aud.duration
+			aud.src = this["resrc"]();
+			isspeek && aud.play();
+			return this;
+		}
+		
+	}
+		
+	speech.fn.init.prototype = speech.fn;
+	
+	window.speech = speech;
+	
+}(window));
+
+	$(".btn").click(function () {
+		speech($(".txt1").val());
+	});			
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style>
+		
+		#d1 { margin: 50px; }
+		#d2 { margin: 150px; }
+		#d3 { margin: 200px; }
+		#d4 { margin: 300px; }
+
+		#keyboard { width: 360px;height: 120px;background: green;position: absolute; }
+		.kbBtn { width:40px;height: 40px;float: left; }
+
+	</style>
+	<script src="../jquery-3.1.0.min.js"></script>
+	
+</head>
+<body>
+	
+	<div id="d1"><input type="text"></div>
+	<div id="d2"><input type="text"></div>
+	<div id="d3"><input type="text"></div>
+	<div id="d4"><input type="text"></div>
+
+	<script>
+
+		$("input").focus(function () {
+
+			$("#keyboard").remove();
+			var kb = document.createElement("div");
+			kb.id = "keyboard";
+
+			$(this).parent().append($(kb));
+			$("#keyboard").click(function (){
+		 		event.stopPropagation();
+		 	})
+
+			if($(this).parent().css("position") == "" || $(this).parent().css("position") == "static") {
+				$(this).parent().css("position", "relative"); 
+			}
+
+			var self = this;
+			var charCodes = [];
+			for(var i=65; i<=90; i++){
+				charCodes.push(i);
+			}
+
+			for(var i=0; i<=25; i++) {
+				var button = document.createElement("button");
+				$(button).attr("class", "kbBtn");
+
+				// 制造随机下标
+				var randomIndex = Math.floor(Math.random()*charCodes.length);
+				$(button).text(String.fromCharCode(charCodes[randomIndex])); // String.fromCharCode(i)把ascii码 变成 字符
+				// 每次取出下标之后把 该元素从数组中移除，保证下次不会取到重复的字符
+				charCodes.splice(randomIndex,1);
+
+				$("#keyboard").append($(button));
+				$(button).click(function () {
+					var text = $(self).val();
+					text += $(this).text();
+					$(self).val(text);
+				});
+
+			}
+
+			// 如果一个元素是absolute，那么在没有明确指定它的top left的时候，它的起始位置还是文档流中原始的位置
+			// $(kb).css({
+			// 	top:kb.offsetTop+"px",
+			// 	left:kb.offsetLeft+"px",
+			// })
+		});
+
+	 	$("input").click(function () {
+	 		event.stopPropagation();
+	 	})
+
+	 	
+		$(window).click(function () {
+			$("#keyboard").remove();
+		})
+
+
+	</script>
+</body>
+</html>

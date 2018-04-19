@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>图片拖拽上传</title>
+    <style>
+        .box{
+            width: 300px;
+            height:200px;
+            border-radius: 5px;
+            border: 1px dashed skyblue;
+            position: relative;
+            text-align: center;
+            line-height: 200px;
+            color: #333;
+            font-size: 60px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .box input{
+            width: 300%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            right: 0;
+            z-index: 100;
+            opacity: 0;
+            cursor: pointer;
+        }
+        img{
+            display: block;
+            height: 200px;
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        +
+        <input type="file" onchange="changeFile()" id="file">
+    </div>
+    <img src="" id="img">
+</body>
+<script>
+    function changeFile() {
+        var windowURL = window.URL || window.webkitURL;
+        var loadImg = windowURL.createObjectURL(document.getElementById('file').files[0]);
+        document.getElementById('img').setAttribute('src',loadImg)
+    }
+</script>
+</html>

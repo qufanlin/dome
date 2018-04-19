@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+
+    <!--以上两个应该是有顺序的-->
+
+</head>
+<body>
+    <div class="container">
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group-vertical">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">请点击<span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">功能</a></li>
+                    <li><a href="">你一个功能</a></li>
+                    <li><a href="">其他</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                </ul>
+            </div>
+            <!--也可以向上弹出-->
+            <div class="btn-group-vertical">
+                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">请点击<span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">功能</a></li>
+                    <li><a href="">你一个功能</a></li>
+                    <li><a href="">其他</a></li>
+                    <!--添加一个分割线-->
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                </ul>
+            </div>
+
+    <!--当你想把多个按钮堆叠在同一行上，或者对齐在一起时，用botstrap 就会非常有用-->
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-default">按钮一</button>
+                <button type="button" class="btn btn-default">按钮二</button>
+                <button type="button" class="btn btn-default">按钮三</button>
+             </div>
+        </div>
+        <p>标签样式的导航栏</p>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="">first</a></li>
+            <li><a href="">second</a></li>
+            <li><a href="">vb.what</a></li>
+            <li><a href="">third</a></li>
+            <li><a href="">four</a></li>
+        </ul>
+
+
+        <p>胶囊样式的导航栏</p>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="">first</a></li>
+            <li><a href="">second</a></li>
+            <li><a href="">vb.what</a></li>
+            <li><a href="">third</a></li>
+            <li><a href="">four</a></li>
+        </ul>
+
+
+        <p>垂直胶囊式的导航栏</p>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="">first</a></li>
+            <li><a href="">second</a></li>
+            <li><a href="">vb.what</a></li>
+            <li><a href="">third</a></li>
+            <li><a href="">four</a></li>
+        </ul>
+
+
+        <p>两端对齐的导航元素</p>
+        <ul class="nav nav-pills nav-justified">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="">first</a></li>
+            <li><a href="">second</a></li>
+            <li><a href="">vb.what</a></li>
+            <li><a href="">third</a></li>
+            <li><a href="">four</a></li>
+        </ul>
+
+
+       <P>带有下拉菜单的导航元素</P>
+        <ul class="nav nav-pills">
+            <li  class="active"><a href="">home</a></li>
+            <li><a href="">home</a></li>
+            <li><a href="">home</a></li>
+            <li><a href="">home</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">home<span class="caret"></span></a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="">123</a></li>
+                    <li><a href="">123</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">分离链接</a></li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="nav-header"><a href="#" class="navbar-brand">菜鸟教程</a></div>
+
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="" >ios</a></li>
+                <li><a href="">html</a></li>
+                <li><a href="">andriod</a></li>
+            </ul>
+        </nav>
+
+
+        <p>响应式导航栏</p>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">菜鸟教程</a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">iOS</a></li>
+                        <li><a href="#">SVN</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Java <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">jmeter</a></li>
+                                <li><a href="#">EJB</a></li>
+                                <li><a href="#">Jasper Report</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">分离的链接</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">另一个分离的链接</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <p>导航中的表表单栏</p>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="" class="navbar-brand">菜鸟教程</a>
+                </div>
+                <form action="" class=""></form>
+            </div>
+        </nav>
+
+    </div>
+</body>
+</html>

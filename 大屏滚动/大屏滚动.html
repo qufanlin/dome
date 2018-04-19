@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>大屏滚动</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        overflow: hidden;
+    }
+    
+    #main {
+        width: 100%;
+        top: 0;
+        position: relative;
+    }
+    
+    .content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+    }
+    
+    .current {
+        display: flex;
+        z-index: 2;
+    }
+    
+    #moduleControl {
+        display: flex;
+        position: fixed;
+        height: 100%;
+        right: 50px;
+        top: 0px;
+        flex-flow: column nowrap;
+        justify-content: center;
+        z-index: 3;
+    }
+    
+    #moduleControl>ul {
+        display: flex;
+        width: 12px;
+        height: 132px;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+    
+    #moduleControl>ul>li {
+        cursor: pointer;
+        border: 1px solid #c8c8c8;
+        border-radius: 6px;
+        display: block;
+        height: 11px;
+        margin-bottom: 8px;
+        width: 11px;
+    }
+    
+    .moduleCItem::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        background: #a8a8a8;
+        width: 3px;
+        left: 0px;
+        margin: 4px 0 0 4.8px;
+        border-radius: 3px;
+    }
+    
+    #moduleControl>ul>li::after {
+        position: absolute;
+        content: "";
+        height: 23px;
+        background: rgba(155, 155, 155, .5);
+        width: 1px;
+        left: 0px;
+        margin: 11px 0 0 6px;
+    }
+    
+    #moduleControl>ul>li:last-child::after {
+        position: absolute;
+        content: "";
+        height: 0px;
+        width: 0px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="main" style="top: 0;">
+        <div class="content num1">
+            <img src="1.jpg" width="100%" height="100%">
+        </div>
+        <div class="content num2">
+            <img src="2.jpg" width="100%" height="100%">
+        </div>
+        <div class="content num3">
+            <img src="3.jpg" width="100%" height="100%">
+        </div>
+        <div class="content num4">
+            <img src="4.jpg" width="100%" height="100%">
+        </div>
+    </div>
+    <div id="moduleControl">
+        <ul>
+            <li class="moduleCItem"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+//>>>>>>>>>>>>>>>>>>>>>>多屏滚动<<<<<<<<<<<<<<<<<<<<<<<<<
+var main = document.getElementById("main");
+var divHeight = window.innerHeight;
+main.style.height = divHeight + "px";
+var content = $(".content");
+content.height(divHeight);
+var startTime = 0, //开始翻屏时间
+    endTime = 0,
+    now = 0;
+var isRun = true;
+var isRunning = true;
+
+// 浏览器兼容问题
+document.addEventListener("mousewheel", scrollFun, false);
+
+//滚动事件处理函数
+function scrollFun(event) {
+
+    if (isRunning) {
+        // 获取时间戳
+        startTime = new Date().getTime();
+        var delta = event.detail || (-event.wheelDelta);
+        //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+        //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+
+        if ((endTime - startTime) < -1000) {
+            //1秒内执行一次翻页
+            if (delta > 0 && parseInt(main.style.top) > -divHeight * (content.length - 1)) {
+                //向下翻页
+                now = (-divHeight) + parseInt(main.style.top);
+                turnPage(now);
+                setTimeout(function() {
+                    $('#moduleControl>ul>li').siblings(".moduleCItem").next().addClass("moduleCItem").siblings(".moduleCItem").removeClass();
+                }, 500)
+            }
+
+            if (delta < 0 && parseInt(main.style.top) < 0) {
+                //向上翻页
+                now = divHeight + parseInt(main.style.top);
+                turnPage(now);
+                setTimeout(function() {
+                    $('#moduleControl>ul>li').siblings(".moduleCItem").prev().addClass("moduleCItem").siblings(".moduleCItem").removeClass();
+                }, 500);
+
+            }
+            endTime = new Date().getTime();
+        }
+    }
+
+}
+//翻页函数
+function turnPage(now) {
+    isRun = false;
+    $("#main").animate({
+        top: (now + 'px')
+    }, 1000, function() {
+        isRun = true;
+        console.log(parseInt(main.style.top));
+    });
+    //setTimeout("main.style.top = now + 'px'",1000);     javascript 实现动画效果
+}
+//>>>>>>>>>>>>>>>>>>>>>>>>>点击进行滚动<<<<<<<<<<<<<<<<<<<<<<<<
+$('#moduleControl>ul>li').click(function() {
+    if (isRun != true) {
+        console.log("fasle");
+    } else {
+        isRunning = false;
+        isRun = false;
+        var a = $(".moduleCItem").index();
+        var b = $(this).index();
+        $(".moduleCItem").removeClass();
+        $(this).addClass("moduleCItem");
+        run(a, b);
+    }
+})
+
+function run(a, b) {
+    //向上
+    if (a > b) {
+        var x = (a - b) * parseInt(main.style.height);
+        $("#main").animate({
+            top: (parseInt(main.style.top) + x) + 'px'
+        }, 1000, function() {
+            isRun = true;
+            isRunning = true;
+        });
+    }
+    //向下
+    if (a < b) {
+        var x = (-(b - a)) * parseInt(main.style.height);
+        console.log(x);
+        $("#main").animate({
+            top: (parseInt(main.style.top) + x) + 'px'
+        }, 1000, function() {
+            isRun = true;
+            isRunning = true;
+        });
+    }
+}
+</script>
+
+</html>

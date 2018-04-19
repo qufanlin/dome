@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/style.js"></script>
+</head>
+<body>
+	<div class="content">
+	<!-- .list以下（包含.list）以下为本插件内容，需要的同学可复制里面部分即可。 -->
+		<div class="list">
+			<ul>
+				<li>
+					<p class="title">Item1</p>
+					<ul class='list-se'>
+						<p class="title">Item1</p>
+						<li><p>li-1</p></li>
+					</ul>
+				</li>
+				<li>
+					<p class="title">Item2</p>
+					<ul class='list-se'>
+						<p class="title">Item2</p>
+						<li><p>li-1</p></li>
+						<li><p>li-2</p></li>
+						<li><p>li-3</p></li>
+						<li><p>li-4</p></li>
+						<li><p>li-5</p></li>
+						<li><p>li-6</p></li>
+					</ul>
+				</li>
+				<li>
+					<p class="title">Item3</p>
+					<ul class='list-se'>
+						<p class="title">Item3</p>
+						<li><p>li-1</p></li>
+						<li><p>li-2</p></li>
+						<li><p>li-3</p></li>
+					</ul>
+				</li>
+				<li>
+					<p class="title">Item4</p>
+					<ul class='list-se'>
+						<p class="title">Item4</p>
+						<li><p>li-1</p></li>
+						<li><p>li-2</p></li>
+						<li><p>li-3</p></li>
+					</ul>
+
+				</li>
+				<li>
+					<p class="title">foot5</p>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+jQuery(document).ready(function($) 
+{
+	$('.list ul li p').clickdown();
+	$('.list-se p[class=title]').clickup();
+	$('.list>ul>li').ad();
+});
+</script>
+</html>

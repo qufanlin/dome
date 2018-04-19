@@ -1,0 +1,129 @@
+.a2{
+    background: rgb(2,179,137);
+    color:white;
+}
+a{
+    text-decoration: none;
+
+}
+*{
+    font-family: 微软雅黑；;
+}
+.picture{
+    width:960px;
+    height:450px;
+    margin:0px auto;
+    margin-bottom: 35PX;
+    background:cyan;
+    position:relative;
+}
+.timeshow{
+    position: absolute;
+}
+.dianji{
+    background:rgba(0,0,0,0.2);
+    width:71px;
+    height:71px;
+    z-index: 2;
+    position: absolute;
+}
+.lt{
+    top:190px;
+    left:10px;
+
+}
+.gt{
+    top:190px;
+    right:10px;
+}
+.digal{
+    position: absolute;
+    top:391px;
+    left:497px;
+}
+.digal ul{
+    list-style: none;
+}
+
+.tab{
+    width:30px;
+    height:30px;
+    background-color: #5388e8;
+    float:left;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 15px;
+    border-radius: 15px;
+    font-size:12px;
+    color:white;
+    cursor: pointer;
+}
+.bg{
+    background-color: red;
+}
+.newsNav{margin-bottom: 30px;}
+.newsNav p{line-height: 25px;color: rgb(121, 121, 121);font-size: 14px;}
+.pagCenter{text-align: center;}
+
+
+.bg3{
+    background:rgb(55,65,75);
+}
+.footer{
+    width:960px;
+    /*height:500px;*/
+    /*background: cyan;*/
+    margin:50px auto;
+    padding-top:50px;
+    font-size: 微软雅黑;
+    color:#79818a;
+    padding-bottom: 30px;
+}
+.footer a{
+    color:#79818a;
+}
+.footer a:hover{
+    color:white;
+}
+.footer a:active{
+    color:#79818a;
+}
+.footer-list ul{
+    list-style:none;
+    text-align:center;
+    padding-bottom:30px;
+}
+.footer-list ul li{
+    display:inline-block;
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    cursor:pointer;
+    font-size:16px;
+
+}
+.footer-list ul span{
+    margin-left: 30px;
+    font-size:30px;
+    vertical-align: middle;
+}
+.footer-erwei{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:30px;
+
+}
+.footer-erwei div{
+    display: inline-block;
+    vertical-align: middle;
+}
+.footer-erwei-1{
+    margin-left:50px;
+}
+.footer-p{
+    text-align: center;
+    margin-top:30px;
+    color:white;
+    font-size:12px;
+}

@@ -1,0 +1,56 @@
+
+*{padding:0px;margin:0px;font: 12px/150% 'Microsoft YaHei','Arial,Verdana',"\5b8b\4f53";}
+.point{cursor: pointer;}
+a{display: inline-block;text-decoration: none;}
+
+.box{width:100%}
+
+.header{width:1210px;margin:0px auto;overflow: hidden;padding-bottom: 20px;}
+.header>a:first-child{background: url('../img/icon.png');width:160px;height:49px;float: left;margin-top: 30px;}
+.header .logo-title{letter-spacing:5px;font-size:18px;color:rgb(0, 0, 0);width:100px;height:34px;line-height: 34px;padding-left:25px;display: inline-block;float: left;margin-top:40px;margin-left:25px;border-left: rgb(187, 187, 187) solid 1px;font-weight: normal;}
+.have-account{float: right;font-size:16px;color:rgb(153, 153, 153);margin-top: 55px;}
+.have-account a{font-size:16px; color:rgb(51, 51, 51);}
+
+
+hr{border:rgb(243,243,243) 2px solid;}
+
+/*注意模块的距离*/
+.content{width:830px;margin:30px auto;padding:30px 190px;overflow: hidden;border-bottom: 1px solid rgb(221,221,221);}
+.content-left{float:left;}
+.content-right{width:213px;height:580px;float:right;padding-left:80px;border-left:1px solid  rgb(221, 221, 221); }
+
+
+.form-class,.form-class1{width:398px;height:52px;border: rgb(221, 221, 221) 1px solid;overflow: hidden;}
+.content .content-left .info{width:90px;height:52px;padding-left:20px;display: inline-block;line-height: 52px;font-size:16px;float: left}
+.text-len1{letter-spacing: 14px;}
+.text-len2{letter-spacing: 3px;}
+.text-len{letter-spacing: 14px;}
+.form-class input,.form-class1 input{width:190px;height:19px;line-height:19px;font-size:14px;color:rgb(204,204,204);border: 0px;margin-left: 20px;outline: none;margin-top:17px;}
+.infomation{width:398px;height:30px;border:solid 0px red;}
+.infomation span{line-height:30px;color:rgb(197, 197, 197);margin-left:25px;}
+
+
+.checknumber{display: inline-block;width: 150px;height:36px;float: right;margin-top:7px;background:url('../img/image6.jpg');background-size:contain; }
+.phoneCheck{display: inline-block; width:110px;height:46px;;background: rgb(242,242,242);margin-top:2px;float:right;text-align: center;line-height: 46px;font-size:15px;letter-spacing: 2px;}
+
+
+.yuedu{width:398px;height:21px;}
+.yuedu input{vertical-align: middle;margin-right:15px;}
+
+
+.rightRejist{width:398px;height:52px;border: rgb(221, 221, 221) 1px solid;overflow: hidden;background:rgb(238,34,34);text-align:center;line-height:52px;color:rgb(255,255,220);margin-top:30px;letter-spacing: 2px;font-size: 16px;}
+
+
+.q{width:180px;overflow: hidden;font-size: 14px;padding-top:30px;padding-bottom: 30px;padding-left:10px;}
+.q a{width:34px;height:34px;background:url('../img/icon.png');display: inline-block;background-position: -100px -50px;margin-right:15px;float:left;margin-left:15px;}
+
+.q span{display: inline-block;float:left;}
+#span1{padding-top:5px;}
+
+#a1{background-position: 0px -48px;}
+#a2{background-position:-47px -48px;margin-top:5px;border-radius: 5px;}
+
+
+.footer{width:840px;height:200px;margin:0px auto;}
+.footer a{margin-left:10px;margin-right:10px;color:rgb(153, 153, 153);}
+.copyright{text-align: center;padding-top:15px;color:rgb(153, 153, 153);}

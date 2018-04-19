@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title>canvas的学习-画板</title>
+            <script type="text/javascript">
+window.onload = function(){
+            var oC = document.getElementById('c1');
+        var oGC = oC.getContext('2d');  
+        oC.onmousedown = function(ev){
+                var ev = ev || window.event;
+                oGC.moveTo(ev.clientX-oC.offsetLeft,ev.clientY-oC.offsetTop);
+                document.onmousemove = function(ev){
+                        var ev = ev || window.event;
+                        oGC.lineTo(ev.clientX-oC.offsetLeft,ev.clientY-oC.offsetTop);
+                        oGC.stroke();
+                };
+                document.onmouseup = function(){
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                };
+        };
+        
+};
+             </script>
+        </head>
+        <body>
+                <div >
+                <canvas id="c1" width="400"height="450"> browser does notcanvas</canvas>
+         </div>
+        </body>
+</html>

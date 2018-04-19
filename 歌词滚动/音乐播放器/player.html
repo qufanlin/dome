@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放</title>
+    <style >
+        #mar1{
+            display: block;
+            color: #2aabd2;
+            font-size: 25px;
+            line-height:50px;
+            background-color: lightgreen;
+            width:400px;
+            height: 500px;
+            margin:0 auto;
+            text-align: center;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<audio src="src/南山南.mp3"></audio>
+<input type="button" value="设置音乐" onclick="setMusic()">
+<input type="button" value="音乐存档" onclick="saveMusic()">
+<input type="button" value="播放音乐" onclick="playMusic()">
+<div id="mar1"  >
+        <h2>南山南</h2>
+    <p>你在南方的艳阳里大雪纷飞</p>
+
+    <p>我在北方的寒夜里四季如春</p>
+
+    <p>如果天黑之前来得及</p>
+
+    <p>我要忘了你的眼睛</p>
+
+    <p>穷极一生做不完一场梦</p>
+
+    <p> 他不再和谁谈论相逢的孤岛</p>
+
+    <p>因为心里早已荒芜人烟</p>
+
+    <p>他的心里再装不下一个家</p>
+
+    <p>做一个只对自己说谎的哑巴</p>
+
+    <p>他说</p>
+
+    <p>你任何为人称道的美丽</p>
+
+    <p>不及他第一次遇见你</p>
+
+    <p>时光苟延残喘无可奈何</p>
+
+    <p>如果所有土地连在一起</p>
+
+    <p>走上一生只为去拥抱你</p>
+
+    <p>喝醉了他的梦，晚安</p>
+
+    <p>他听见有人唱着古老的歌</p>
+
+    <p>唱着今天还在远方发生的</p>
+
+    <p>像在她眼睛里看到的孤岛</p>
+
+    <p>没有悲伤但也没有花朵</p>
+
+    <p>你在南方的艳阳里大雪纷飞</p>
+
+    <p>我在北方的寒夜里四季如春</p>
+
+    <p>如果天黑之前来得及</p>
+
+    <p>我要忘了你的眼睛</p>
+
+    <p>穷极一生做不完一场梦</p>
+
+    <p>你在南方的艳阳里大雪纷飞</p>
+
+    <p>我在北方的寒夜里四季如春</p>
+
+    <p>如果天黑之前来得及</p>
+
+    <p>我要忘了你的眼睛</p>
+
+    <p>穷极一生做不完一场梦</p>
+
+    <p>大梦初醒荒唐了这一生</p>
+
+    <p>南山南，北秋悲</p>
+
+    <p>南山有谷堆</p>
+
+    <p>南风喃，北海北</p>
+
+    <p>北海有墓碑</p>
+
+    <p>南山南，北秋悲</p>
+
+    <p>南山有谷堆</p>
+
+    <p>南风喃，北海北</p>
+
+    <p>北海有墓碑</p>
+
+    <p>北海有墓碑</p>
+</div>
+<script src="js/jq3.1min.js"></script>
+<script>
+
+
+    function move(top,time){
+        $("h2").animate({"marginTop":top+"px"},time);
+
+    }
+//    var musicArray = [7856, 4939, 5712, 3091, 5816, 7633, 7047, 7887, 7402, 2292, 3291, 2909, 5838, 5856, 3021, 5989, 62340, 7459, 7508, 7661, 9327, 5516, 5474, 2829, 6033, 9542, 5348, 5738, 2784, 5793, 10471, 6436, 5690, 9636, 5134, 9031, 10393, 6674, 5268, 8745];
+   var musicArray = [];
+    var oldDate;
+//    设置音乐
+    function setMusic(){
+        $("audio")[0].play();
+        oldDate= new Date();
+    }
+    document.onkeyup = function(e){
+        if(e.keyCode==32){
+            var newDate = new Date();
+            move(-75*musicArray.length,0);
+            musicArray.push(newDate-oldDate);
+            console.log(newDate-oldDate);
+        }
+    }
+//    播放音乐
+    function playMusic(){
+        $("audio")[0].currentTime=0;
+        $("audio")[0].play();
+
+        $.ajax({
+            port:'63342',
+            type:'post',
+            url:'http://localhost:63342/get',
+            success:function(data){
+                var json = JSON.parse(data);
+                console.log(data);
+                callback(json.data);
+            },
+            error:function(e){
+                console.log("错误！！！",e);
+            }
+        });
+//        callback(musicArray);
+    }
+    function callback(data){
+        console.log(data);
+        for(var i =0;i<data.length;i++ ){
+            move(-70*i,data[i]);
+        }
+    }
+//把音乐存入数据里
+    function saveMusic(){
+        var obj = {data:musicArray};
+        $.ajax({
+            port:'63342',
+            type:'post',
+//            data:'{data:'+musicArray+'}',
+            data: JSON.stringify(obj),
+            url:'http://localhost:63342/save'
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=" utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>jquery实现的放大镜效果-蚂蚁部落</title>
+<style type="text/css">
+*{margin:0px;padding:0px;}
+.box{
+  position:relative;
+  margin:10px auto;
+  padding:10px;
+  border:1px solid #666;
+  background:#CCC;
+  width:250px;
+}
+.box .small{
+  position:relative;
+  text-align:center;
+  background:#FFF;
+  height:167px;
+}
+.box .small .mark{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:2;
+  width:80px;
+  height:80px;
+  background:#FFFFFF;
+  filter:alpha(opacity:50); 
+  opacity:0.5;
+  border:1px solid #333;
+  display:none;
+}
+.box .big{
+  position:absolute;
+  left:0;
+  top:0;
+  display:none;
+} 
+.boxbig{
+  position:absolute;
+  left:275px;
+  top:0;
+  width:160px;
+  height:160px;
+  overflow:hidden;
+}
+</style>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+  var mouseX = 0; 
+  var mouseY = 0;  
+  var maxLeft = 0; 
+  var maxTop = 0; 
+  var markLeft = 0; 
+  var markTop = 0; 
+  var perX = 0; 
+  var perY = 0; 
+  var bigLeft = 0; 
+  var bigTop = 0; 
+   
+  function updataMark($mark){
+    if(markLeft<0){
+      markLeft = 0;
+    }
+    else if(markLeft>maxLeft){
+      markLeft=maxLeft;
+    }
+    if(markTop<0){
+      markTop=0;
+    }
+    else if(markTop>maxTop){
+      markTop=maxTop;
+    }
+   
+   perX=markLeft/$(".small").outerWidth();
+   perY=markTop/$(".small").outerHeight();
+   
+   bigLeft=-perX*$(".big").outerWidth();
+   bigTop=-perY*$(".big").outerHeight();
+   
+    //设定小框的位置
+    $mark.css({"left":markLeft,"top":markTop,"display":"block"});
+  }
+ 
+  //改变大图的位置
+  function updataBig(){
+    $(".big").css({"display":"block","left":bigLeft,"top":bigTop});
+  }
+ 
+  //鼠标移出时
+  function cancle(){
+    $(".big").css({"display":"none"}); 
+    $(".mark").css({"display":"none"});
+  }
+ 
+  //鼠标小图上移动时
+  function imgMouseMove(event){  
+   var $this = $(this);
+   var $mark = $(this).children(".mark");
+     
+   //鼠标在小图的位置
+   mouseX=event.pageX-$this.offset().left - $mark.outerWidth()/2;
+   mouseY=event.pageY-$this.offset().top - $mark.outerHeight()/2;
+   
+    //最大值
+    maxLeft=$this.width()-$mark.outerWidth();
+    maxTop=$this.height()-$mark.outerHeight();
+    markLeft=mouseX;
+    markTop=mouseY;
+   
+    updataMark($mark);
+    updataBig();
+  }
+  $(".small").bind("mousemove",imgMouseMove).bind("mouseleave",cancle);
+})
+</script>
+</head>
+<body>
+<div class="box">
+  <div class="small">
+   <span class="mark"></span>
+   <img src="1.jpg" alt="" width="250px" height="167px" />
+  </div>
+  <div class="boxbig">
+   <div class="big"><img src="1.jpg" alt="" /></div>
+  </div>
+</div>
+</body>
+</html>

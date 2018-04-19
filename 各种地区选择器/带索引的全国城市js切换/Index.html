@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>原创带索引全国地区城市切换js特效代码</title>
+<meta name="Keywords" content="地区切换,地区选择,城市选择">
+<meta name="Description" content="原创带索引全国地区城市切换js特效代码。">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/sc_common.js"></script>
+<script type="text/javascript" src="js/scroll_city.js"></script>
+</head>
+</head>
+
+<body>
+<div id="site-nav">
+    <div class="w1200 dorpdown">
+    	<script type="text/javascript" src="js/warehouse_area.js"></script>
+
+<ul class="fl">
+    <li class="dorpdown" id="city-choice">
+        <dt class="sc-icon">
+            <span>送货至：</span>
+        <div class="sc-choie"><i class="sc-icon-right"></i><span class="ui-areamini-text" data-id="2" title="">南宁</span></div>
+        </dt>
+                <dd class="dorpdown-layer">
+            <div class="dd-spacer" style="width: 54px;"></div>
+            <div class="ui-areamini-content-wrap" id="ui-content-wrap">
+                <dl>
+        <dt>热门</dt>
+        <dd><a href="javascript:get_district_list(52, 0);">北京</a></dd>
+        <dd><a href="javascript:get_district_list(321, 0);">上海</a></dd>
+        <dd><a href="javascript:get_district_list(76, 0);">广州</a></dd>
+        <dd><a href="javascript:get_district_list(77, 0);">深圳</a></dd>
+        <dd><a href="javascript:get_district_list(322, 0);">成都</a></dd>
+        <dd><a href="javascript:get_district_list(311, 0);">西安</a></dd>
+        <dd><a href="javascript:get_district_list(343, 0);">天津</a></dd>
+        <dd><a href="javascript:get_district_list(180, 0);">武汉</a></dd>
+        <dd><a href="javascript:get_district_list(120, 0);">海口</a></dd>
+        <dd><a href="javascript:get_district_list(220, 0);">南京</a></dd>
+        </dl>
+        <div class="search-first-letter">
+            <a href="javascript:void(0);" data-letter="A">A</a>
+            <a href="javascript:void(0);" data-letter="B">B</a>
+            <a href="javascript:void(0);" data-letter="C">C</a>
+            <a href="javascript:void(0);" data-letter="D">D</a>
+            <a href="javascript:void(0);" data-letter="E">E</a>
+            <a href="javascript:void(0);" data-letter="F">F</a>
+            <a href="javascript:void(0);" data-letter="G">G</a>
+            <a href="javascript:void(0);" data-letter="H">H</a>
+            <a href="javascript:void(0);" data-letter="J">J</a>
+            <a href="javascript:void(0);" data-letter="K">K</a>
+            <a href="javascript:void(0);" data-letter="L">L</a>
+            <a href="javascript:void(0);" data-letter="M">M</a>
+            <a href="javascript:void(0);" data-letter="N">N</a>
+            <a href="javascript:void(0);" data-letter="P">P</a>
+            <a href="javascript:void(0);" data-letter="Q">Q</a>
+            <a href="javascript:void(0);" data-letter="R">R</a>
+            <a href="javascript:void(0);" data-letter="S">S</a>
+            <a href="javascript:void(0);" data-letter="T">T</a>
+            <a href="javascript:void(0);" data-letter="W">W</a>
+            <a href="javascript:void(0);" data-letter="X">X</a>
+            <a href="javascript:void(0);" data-letter="Y">Y</a>
+            <a href="javascript:void(0);" data-letter="Z">Z</a>
+        </div>
+        <div class="scrollBody" id="scrollBody">
+            <div class="all-list" id="scrollMap">
+                <ul id="ul" style="margin-top: -704px;">
+                        <li data-id="1" data-name="A">
+                        <em>A</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(36, 0);">安庆</a>
+                            <a href="javascript:get_district_list(112, 0);">安顺</a>
+                            <a href="javascript:get_district_list(152, 0);">安阳</a>
+                            <a href="javascript:get_district_list(246, 0);">鞍山</a>
+                            <a href="javascript:get_district_list(259, 0);">阿拉善盟</a>
+                            <a href="javascript:get_district_list(312, 0);">安康</a>
+                            <a href="javascript:get_district_list(324, 0);">阿坝</a>
+                            <a href="javascript:get_district_list(345, 0);">阿里</a>
+                            <a href="javascript:get_district_list(352, 0);">阿克苏</a>
+                            <a href="javascript:get_district_list(353, 0);">阿拉尔</a>
+                            <a href="javascript:void(0);" class="is_district">澳门</a>
+                        </div>
+                    </li>
+                    <li data-id="2" data-name="B">
+                        <em>B</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(37, 0);">蚌埠</a>
+                            <a href="javascript:get_district_list(51, 0);">亳州</a>
+                            <a href="javascript:get_district_list(52, 0);">北京</a>
+                            <a href="javascript:get_district_list(63, 0);">白银</a>
+                            <a href="javascript:get_district_list(99, 0);">百色</a>
+                            <a href="javascript:get_district_list(100, 0);">北海</a>
+                            <a href="javascript:get_district_list(113, 0);">毕节</a>
+                            <a href="javascript:get_district_list(122, 0);">白沙</a>
+                            <a href="javascript:get_district_list(123, 0);">保亭</a>
+                            <a href="javascript:get_district_list(139, 0);">保定</a>
+                            <a href="javascript:get_district_list(213, 0);">白城</a>
+                            <a href="javascript:get_district_list(214, 0);">白山</a>
+                            <a href="javascript:get_district_list(247, 0);">本溪</a>
+                            <a href="javascript:get_district_list(260, 0);">巴彦淖尔盟</a>
+                            <a href="javascript:get_district_list(261, 0);">包头</a>
+                            <a href="javascript:get_district_list(285, 0);">滨州</a>
+                            <a href="javascript:get_district_list(313, 0);">宝鸡</a>
+                            <a href="javascript:get_district_list(325, 0);">巴中</a>
+                            <a href="javascript:get_district_list(354, 0);">巴音郭楞</a>
+                            <a href="javascript:get_district_list(355, 0);">博尔塔拉</a>
+                            <a href="javascript:get_district_list(371, 0);">保山</a>
+                        </div>
+                    </li>
+                    <li data-id="3" data-name="C">
+                        <em>C</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(38, 0);">巢湖</a>
+                            <a href="javascript:get_district_list(39, 0);">池州</a>
+                            <a href="javascript:get_district_list(40, 0);">滁州</a>
+                            <a href="javascript:get_district_list(78, 0);">潮州</a>
+                            <a href="javascript:get_district_list(101, 0);">崇左</a>
+                            <a href="javascript:get_district_list(124, 0);">昌江</a>
+                            <a href="javascript:get_district_list(125, 0);">澄迈县</a>
+                            <a href="javascript:get_district_list(140, 0);">沧州</a>
+                            <a href="javascript:get_district_list(141, 0);">承德</a>
+                            <a href="javascript:get_district_list(197, 0);">长沙</a>
+                            <a href="javascript:get_district_list(199, 0);">常德</a>
+                            <a href="javascript:get_district_list(200, 0);">郴州</a>
+                            <a href="javascript:get_district_list(211, 0);">长春</a>
+                            <a href="javascript:get_district_list(223, 0);">常州</a>
+                            <a href="javascript:get_district_list(248, 0);">朝阳</a>
+                            <a href="javascript:get_district_list(262, 0);">赤峰</a>
+                            <a href="javascript:get_district_list(301, 0);">长治</a>
+                            <a href="javascript:get_district_list(322, 0);">成都</a>
+                            <a href="javascript:get_district_list(346, 0);">昌都</a>
+                            <a href="javascript:get_district_list(356, 0);">昌吉</a>
+                            <a href="javascript:get_district_list(372, 0);">楚雄</a>
+                            <a href="javascript:get_district_list(394, 0);">重庆</a>
+                        </div>
+                    </li>
+                    <li data-id="4" data-name="D">
+                        <em>D</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(64, 0);">定西</a>
+                            <a href="javascript:get_district_list(79, 0);">东莞</a>
+                            <a href="javascript:get_district_list(126, 0);">定安县</a>
+                            <a href="javascript:get_district_list(127, 0);">东方</a>
+                            <a href="javascript:get_district_list(168, 0);">大庆</a>
+                            <a href="javascript:get_district_list(169, 0);">大兴安岭</a>
+                            <a href="javascript:get_district_list(245, 0);">大连</a>
+                            <a href="javascript:get_district_list(249, 0);">丹东</a>
+                            <a href="javascript:get_district_list(286, 0);">德州</a>
+                            <a href="javascript:get_district_list(287, 0);">东营</a>
+                            <a href="javascript:get_district_list(302, 0);">大同</a>
+                            <a href="javascript:get_district_list(326, 0);">达州</a>
+                            <a href="javascript:get_district_list(327, 0);">德阳</a>
+                            <a href="javascript:get_district_list(373, 0);">大理</a>
+                            <a href="javascript:get_district_list(374, 0);">德宏</a>
+                            <a href="javascript:get_district_list(375, 0);">迪庆</a>
+                        </div>
+                    </li>
+                    <li data-id="5" data-name="E">
+                        <em>E</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(182, 0);">鄂州</a>
+                            <a href="javascript:get_district_list(196, 0);">恩施</a>
+                            <a href="javascript:get_district_list(263, 0);">鄂尔多斯</a>
+                        </div>
+                    </li>
+                    <li data-id="6" data-name="F">
+                        <em>F</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(41, 0);">阜阳</a>
+                            <a href="javascript:get_district_list(53, 0);">福州</a>
+                            <a href="javascript:get_district_list(80, 0);">佛山</a>
+                            <a href="javascript:get_district_list(102, 0);">防城港</a>
+                            <a href="javascript:get_district_list(234, 0);">抚州</a>
+                            <a href="javascript:get_district_list(250, 0);">抚顺</a>
+                            <a href="javascript:get_district_list(251, 0);">阜新</a>
+                        </div>
+                    </li>
+                    <li data-id="7" data-name="G">
+                        <em>G</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(65, 0);">甘南</a>
+                            <a href="javascript:get_district_list(76, 0);">广州</a>
+                            <a href="javascript:get_district_list(98, 0);">桂林</a>
+                            <a href="javascript:get_district_list(103, 0);">贵港</a>
+                            <a href="javascript:get_district_list(111, 0);">贵阳</a>
+                            <a href="javascript:get_district_list(235, 0);">赣州</a>
+                            <a href="javascript:get_district_list(271, 0);">固原</a>
+                            <a href="javascript:void(0);" class="is_district">果洛</a>
+                            <a href="javascript:get_district_list(328, 0);">甘孜</a>
+                            <a href="javascript:get_district_list(329, 0);">广安</a>
+                            <a href="javascript:get_district_list(330, 0);">广元</a>
+                        </div>
+                    </li>
+                    <li data-id="8" data-name="H">
+                        <em>H</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(42, 0);">淮北</a>
+                            <a href="javascript:get_district_list(43, 0);">淮南</a>
+                            <a href="javascript:get_district_list(44, 0);">黄山</a>
+                            <a href="javascript:get_district_list(81, 0);">河源</a>
+                            <a href="javascript:get_district_list(82, 0);">惠州</a>
+                            <a href="javascript:get_district_list(104, 0);">河池</a>
+                            <a href="javascript:get_district_list(105, 0);">贺州</a>
+                            <a href="javascript:get_district_list(120, 0);">海口</a>
+                            <a href="javascript:get_district_list(142, 0);">邯郸</a>
+                            <a href="javascript:get_district_list(143, 0);">衡水</a>
+                            <a href="javascript:get_district_list(153, 0);">鹤壁</a>
+                            <a href="javascript:get_district_list(165, 0);">漯河</a>
+                            <a href="javascript:get_district_list(167, 0);">哈尔滨</a>
+                            <a href="javascript:get_district_list(170, 0);">鹤岗</a>
+                            <a href="javascript:get_district_list(171, 0);">黑河</a>
+                            <a href="javascript:get_district_list(183, 0);">黄冈</a>
+                            <a href="javascript:get_district_list(184, 0);">黄石</a>
+                            <a href="javascript:get_district_list(201, 0);">衡阳</a>
+                            <a href="javascript:get_district_list(202, 0);">怀化</a>
+                            <a href="javascript:get_district_list(224, 0);">淮安</a>
+                            <a href="javascript:get_district_list(252, 0);">葫芦岛</a>
+                            <a href="javascript:get_district_list(258, 0);">呼和浩特</a>
+                            <a href="javascript:get_district_list(264, 0);">呼伦贝尔</a>
+                            <a href="javascript:void(0);" class="is_district">海北</a>
+                            <a href="javascript:void(0);" class="is_district">海东</a>
+                            <a href="javascript:void(0);" class="is_district">海南</a>
+                            <a href="javascript:void(0);" class="is_district">海西</a>
+                            <a href="javascript:void(0);" class="is_district">黄南</a>
+                            <a href="javascript:get_district_list(288, 0);">菏泽</a>
+                            <a href="javascript:get_district_list(314, 0);">汉中</a>
+                            <a href="javascript:get_district_list(357, 0);">哈密</a>
+                            <a href="javascript:get_district_list(358, 0);">和田</a>
+                            <a href="javascript:get_district_list(376, 0);">红河</a>
+                            <a href="javascript:get_district_list(383, 0);">杭州</a>
+                            <a href="javascript:get_district_list(384, 0);">湖州</a>
+                            <a href="javascript:get_district_list(3401, 0);">合肥</a>
+                        </div>
+                    </li>
+                    <li data-id="9" data-name="J">
+                        <em>J</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(66, 0);">嘉峪关</a>
+                            <a href="javascript:get_district_list(67, 0);">金昌</a>
+                            <a href="javascript:get_district_list(68, 0);">酒泉</a>
+                            <a href="javascript:get_district_list(83, 0);">江门</a>
+                            <a href="javascript:get_district_list(84, 0);">揭阳</a>
+                            <a href="javascript:get_district_list(154, 0);">济源</a>
+                            <a href="javascript:get_district_list(155, 0);">焦作</a>
+                            <a href="javascript:get_district_list(172, 0);">鸡西</a>
+                            <a href="javascript:get_district_list(173, 0);">佳木斯</a>
+                            <a href="javascript:get_district_list(185, 0);">荆门</a>
+                            <a href="javascript:get_district_list(186, 0);">荆州</a>
+                            <a href="javascript:get_district_list(212, 0);">吉林</a>
+                            <a href="javascript:get_district_list(236, 0);">吉安</a>
+                            <a href="javascript:get_district_list(237, 0);">景德镇</a>
+                            <a href="javascript:get_district_list(238, 0);">九江</a>
+                            <a href="javascript:get_district_list(253, 0);">锦州</a>
+                            <a href="javascript:get_district_list(283, 0);">济南</a>
+                            <a href="javascript:get_district_list(289, 0);">济宁</a>
+                            <a href="javascript:get_district_list(303, 0);">晋城</a>
+                            <a href="javascript:get_district_list(304, 0);">晋中</a>
+                            <a href="javascript:get_district_list(385, 0);">嘉兴</a>
+                            <a href="javascript:get_district_list(386, 0);">金华</a>
+                        </div>
+                    </li>
+                    <li data-id="10" data-name="K">
+                        <em>K</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(151, 0);">开封</a>
+                            <a href="javascript:get_district_list(359, 0);">喀什</a>
+                            <a href="javascript:get_district_list(360, 0);">克拉玛依</a>
+                            <a href="javascript:get_district_list(361, 0);">克孜勒苏</a>
+                            <a href="javascript:get_district_list(367, 0);">昆明</a>
+                        </div>
+                    </li>
+                    <li data-id="11" data-name="L">
+                        <em>L</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(45, 0);">六安</a>
+                            <a href="javascript:get_district_list(54, 0);">龙岩</a>
+                            <a href="javascript:get_district_list(62, 0);">兰州</a>
+                            <a href="javascript:get_district_list(69, 0);">临夏</a>
+                            <a href="javascript:get_district_list(70, 0);">陇南</a>
+                            <a href="javascript:get_district_list(106, 0);">来宾</a>
+                            <a href="javascript:get_district_list(107, 0);">柳州</a>
+                            <a href="javascript:get_district_list(114, 0);">六盘水</a>
+                            <a href="javascript:get_district_list(128, 0);">乐东</a>
+                            <a href="javascript:get_district_list(129, 0);">临高县</a>
+                            <a href="javascript:get_district_list(130, 0);">陵水</a>
+                            <a href="javascript:get_district_list(144, 0);">廊坊</a>
+                            <a href="javascript:get_district_list(150, 0);">洛阳</a>
+                            <a href="javascript:get_district_list(203, 0);">娄底</a>
+                            <a href="javascript:get_district_list(215, 0);">辽源</a>
+                            <a href="javascript:get_district_list(225, 0);">连云港</a>
+                            <a href="javascript:get_district_list(254, 0);">辽阳</a>
+                            <a href="javascript:get_district_list(290, 0);">莱芜</a>
+                            <a href="javascript:get_district_list(291, 0);">聊城</a>
+                            <a href="javascript:get_district_list(292, 0);">临沂</a>
+                            <a href="javascript:get_district_list(305, 0);">临汾</a>
+                            <a href="javascript:get_district_list(306, 0);">吕梁</a>
+                            <a href="javascript:get_district_list(331, 0);">乐山</a>
+                            <a href="javascript:get_district_list(332, 0);">凉山</a>
+                            <a href="javascript:get_district_list(344, 0);">拉萨</a>
+                            <a href="javascript:get_district_list(347, 0);">林芝</a>
+                            <a href="javascript:get_district_list(370, 0);">丽江</a>
+                            <a href="javascript:get_district_list(377, 0);">临沧</a>
+                            <a href="javascript:get_district_list(387, 0);">丽水</a>
+                        </div>
+                    </li>
+                    <li data-id="12" data-name="M">
+                        <em>M</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(46, 0);">马鞍山</a>
+                            <a href="javascript:get_district_list(85, 0);">茂名</a>
+                            <a href="javascript:get_district_list(86, 0);">梅州</a>
+                            <a href="javascript:get_district_list(174, 0);">牡丹江</a>
+                            <a href="javascript:get_district_list(323, 0);">绵阳</a>
+                            <a href="javascript:get_district_list(333, 0);">眉山</a>
+                        </div>
+                    </li>
+                    <li data-id="13" data-name="N">
+                        <em>N</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(55, 0);">南平</a>
+                            <a href="javascript:get_district_list(56, 0);">宁德</a>
+                            <a href="javascript:get_district_list(97, 0);" class="city_selected">南宁</a>
+                            <a href="javascript:get_district_list(156, 0);">南阳</a>
+                            <a href="javascript:get_district_list(220, 0);">南京</a>
+                            <a href="javascript:get_district_list(226, 0);">南通</a>
+                            <a href="javascript:get_district_list(233, 0);">南昌</a>
+                            <a href="javascript:get_district_list(334, 0);">南充</a>
+                            <a href="javascript:get_district_list(335, 0);">内江</a>
+                            <a href="javascript:get_district_list(348, 0);">那曲</a>
+                            <a href="javascript:get_district_list(368, 0);">怒江</a>
+                            <a href="javascript:get_district_list(388, 0);">宁波</a>
+                        </div>
+                    </li>
+                    <li data-id="14" data-name="P">
+                        <em>P</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(57, 0);">莆田</a>
+                            <a href="javascript:get_district_list(71, 0);">平凉</a>
+                            <a href="javascript:get_district_list(157, 0);">平顶山</a>
+                            <a href="javascript:get_district_list(239, 0);">萍乡</a>
+                            <a href="javascript:get_district_list(255, 0);">盘锦</a>
+                            <a href="javascript:get_district_list(336, 0);">攀枝花</a>
+                            <a href="javascript:get_district_list(369, 0);">普洱</a>
+                        </div>
+                    </li>
+                    <li data-id="15" data-name="Q">
+                        <em>Q</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(58, 0);">泉州</a>
+                            <a href="javascript:get_district_list(72, 0);">庆阳</a>
+                            <a href="javascript:get_district_list(87, 0);">清远</a>
+                            <a href="javascript:get_district_list(108, 0);">钦州</a>
+                            <a href="javascript:get_district_list(115, 0);">黔东南</a>
+                            <a href="javascript:get_district_list(116, 0);">黔南</a>
+                            <a href="javascript:get_district_list(117, 0);">黔西南</a>
+                            <a href="javascript:get_district_list(131, 0);">琼海</a>
+                            <a href="javascript:get_district_list(132, 0);">琼中</a>
+                            <a href="javascript:get_district_list(145, 0);">秦皇岛</a>
+                            <a href="javascript:get_district_list(175, 0);">七台河</a>
+                            <a href="javascript:get_district_list(176, 0);">齐齐哈尔</a>
+                            <a href="javascript:get_district_list(187, 0);">潜江</a>
+                            <a href="javascript:get_district_list(284, 0);">青岛</a>
+                            <a href="javascript:get_district_list(378, 0);">曲靖</a>
+                            <a href="javascript:get_district_list(393, 0);">衢州</a>
+                        </div>
+                    </li>
+                    <li data-id="16" data-name="R">
+                        <em>R</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(293, 0);">日照</a>
+                            <a href="javascript:get_district_list(349, 0);">日喀则</a>
+                        </div>
+                    </li>
+                    <li data-id="17" data-name="S">
+                        <em>S</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(47, 0);">宿州</a>
+                            <a href="javascript:get_district_list(59, 0);">三明</a>
+                            <a href="javascript:get_district_list(77, 0);">深圳</a>
+                            <a href="javascript:get_district_list(88, 0);">汕头</a>
+                            <a href="javascript:get_district_list(89, 0);">汕尾</a>
+                            <a href="javascript:get_district_list(90, 0);">韶关</a>
+                            <a href="javascript:get_district_list(121, 0);">三亚</a>
+                            <a href="javascript:get_district_list(138, 0);">石家庄</a>
+                            <a href="javascript:get_district_list(158, 0);">三门峡</a>
+                            <a href="javascript:get_district_list(159, 0);">商丘</a>
+                            <a href="javascript:get_district_list(177, 0);">双鸭山</a>
+                            <a href="javascript:get_district_list(178, 0);">绥化</a>
+                            <a href="javascript:get_district_list(188, 0);">神农架林区</a>
+                            <a href="javascript:get_district_list(189, 0);">十堰</a>
+                            <a href="javascript:get_district_list(190, 0);">随州</a>
+                            <a href="javascript:get_district_list(204, 0);">邵阳</a>
+                            <a href="javascript:get_district_list(216, 0);">四平</a>
+                            <a href="javascript:get_district_list(217, 0);">松原</a>
+                            <a href="javascript:get_district_list(221, 0);">苏州</a>
+                            <a href="javascript:get_district_list(227, 0);">宿迁</a>
+                            <a href="javascript:get_district_list(240, 0);">上饶</a>
+                            <a href="javascript:get_district_list(244, 0);">沈阳</a>
+                            <a href="javascript:get_district_list(272, 0);">石嘴山</a>
+                            <a href="javascript:get_district_list(307, 0);">朔州</a>
+                            <a href="javascript:get_district_list(315, 0);">商洛</a>
+                            <a href="javascript:get_district_list(321, 0);">上海</a>
+                            <a href="javascript:get_district_list(337, 0);">遂宁</a>
+                            <a href="javascript:get_district_list(350, 0);">山南</a>
+                            <a href="javascript:get_district_list(362, 0);">石河子</a>
+                            <a href="javascript:get_district_list(389, 0);">绍兴</a>
+                        </div>
+                    </li>
+                    <li data-id="18" data-name="T">
+                        <em>T</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(48, 0);">铜陵</a>
+                            <a href="javascript:get_district_list(73, 0);">天水</a>
+                            <a href="javascript:get_district_list(118, 0);">铜仁</a>
+                            <a href="javascript:get_district_list(133, 0);">屯昌县</a>
+                            <a href="javascript:get_district_list(146, 0);">唐山</a>
+                            <a href="javascript:get_district_list(191, 0);">天门</a>
+                            <a href="javascript:get_district_list(218, 0);">通化</a>
+                            <a href="javascript:get_district_list(228, 0);">泰州</a>
+                            <a href="javascript:get_district_list(256, 0);">铁岭</a>
+                            <a href="javascript:get_district_list(265, 0);">通辽</a>
+                            <a href="javascript:get_district_list(294, 0);">泰安</a>
+                            <a href="javascript:get_district_list(300, 0);">太原</a>
+                            <a href="javascript:get_district_list(316, 0);">铜川</a>
+                            <a href="javascript:get_district_list(343, 0);">天津</a>
+                            <a href="javascript:get_district_list(363, 0);">图木舒克</a>
+                            <a href="javascript:get_district_list(364, 0);">吐鲁番</a>
+                            <a href="javascript:get_district_list(390, 0);">台州</a>
+                            <a href="javascript:void(0);" class="is_district">台湾</a>
+                        </div>
+                    </li>
+                    <li data-id="19" data-name="W">
+                        <em>W</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(49, 0);">芜湖</a>
+                            <a href="javascript:get_district_list(74, 0);">武威</a>
+                            <a href="javascript:get_district_list(109, 0);">梧州</a>
+                            <a href="javascript:get_district_list(134, 0);">万宁</a>
+                            <a href="javascript:get_district_list(135, 0);">文昌</a>
+                            <a href="javascript:get_district_list(136, 0);">五指山</a>
+                            <a href="javascript:get_district_list(180, 0);">武汉</a>
+                            <a href="javascript:get_district_list(222, 0);">无锡</a>
+                            <a href="javascript:get_district_list(266, 0);">乌海</a>
+                            <a href="javascript:get_district_list(267, 0);">乌兰察布市</a>
+                            <a href="javascript:get_district_list(273, 0);">吴忠</a>
+                            <a href="javascript:get_district_list(295, 0);">威海</a>
+                            <a href="javascript:get_district_list(296, 0);">潍坊</a>
+                            <a href="javascript:get_district_list(317, 0);">渭南</a>
+                            <a href="javascript:get_district_list(351, 0);">乌鲁木齐</a>
+                            <a href="javascript:get_district_list(365, 0);">五家渠</a>
+                            <a href="javascript:get_district_list(379, 0);">文山</a>
+                            <a href="javascript:get_district_list(391, 0);">温州</a>
+                        </div>
+                    </li>
+                    <li data-id="20" data-name="X">
+                        <em>X</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(50, 0);">宣城</a>
+                            <a href="javascript:get_district_list(60, 0);">厦门</a>
+                            <a href="javascript:get_district_list(147, 0);">邢台</a>
+                            <a href="javascript:get_district_list(160, 0);">新乡</a>
+                            <a href="javascript:get_district_list(161, 0);">信阳</a>
+                            <a href="javascript:get_district_list(162, 0);">许昌</a>
+                            <a href="javascript:get_district_list(181, 0);">仙桃</a>
+                            <a href="javascript:get_district_list(192, 0);">咸宁</a>
+                            <a href="javascript:get_district_list(193, 0);">襄樊</a>
+                            <a href="javascript:get_district_list(194, 0);">孝感</a>
+                            <a href="javascript:get_district_list(205, 0);">湘潭</a>
+                            <a href="javascript:get_district_list(206, 0);">湘西</a>
+                            <a href="javascript:get_district_list(229, 0);">徐州</a>
+                            <a href="javascript:get_district_list(241, 0);">新余</a>
+                            <a href="javascript:get_district_list(268, 0);">锡林郭勒盟</a>
+                            <a href="javascript:get_district_list(269, 0);">兴安盟</a>
+                            <a href="javascript:void(0);" class="is_district">西宁</a>
+                            <a href="javascript:get_district_list(308, 0);">忻州</a>
+                            <a href="javascript:get_district_list(311, 0);">西安</a>
+                            <a href="javascript:get_district_list(318, 0);">咸阳</a>
+                            <a href="javascript:get_district_list(380, 0);">西双版纳</a>
+                            <a href="javascript:void(0);" class="is_district">香港</a>
+                        </div>
+                    </li>
+                    <li data-id="21" data-name="Y">
+                        <em>Y</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(91, 0);">阳江</a>
+                            <a href="javascript:get_district_list(92, 0);">云浮</a>
+                            <a href="javascript:get_district_list(110, 0);">玉林</a>
+                            <a href="javascript:get_district_list(166, 0);">濮阳</a>
+                            <a href="javascript:get_district_list(179, 0);">伊春</a>
+                            <a href="javascript:get_district_list(195, 0);">宜昌</a>
+                            <a href="javascript:get_district_list(207, 0);">益阳</a>
+                            <a href="javascript:get_district_list(208, 0);">永州</a>
+                            <a href="javascript:get_district_list(209, 0);">岳阳</a>
+                            <a href="javascript:get_district_list(219, 0);">延边</a>
+                            <a href="javascript:get_district_list(230, 0);">盐城</a>
+                            <a href="javascript:get_district_list(231, 0);">扬州</a>
+                            <a href="javascript:get_district_list(242, 0);">宜春</a>
+                            <a href="javascript:get_district_list(243, 0);">鹰潭</a>
+                            <a href="javascript:get_district_list(257, 0);">营口</a>
+                            <a href="javascript:get_district_list(270, 0);">银川</a>
+                            <a href="javascript:void(0);" class="is_district">玉树</a>
+                            <a href="javascript:get_district_list(297, 0);">烟台</a>
+                            <a href="javascript:get_district_list(309, 0);">阳泉</a>
+                            <a href="javascript:get_district_list(310, 0);">运城</a>
+                            <a href="javascript:get_district_list(319, 0);">延安</a>
+                            <a href="javascript:get_district_list(320, 0);">榆林</a>
+                            <a href="javascript:get_district_list(338, 0);">雅安</a>
+                            <a href="javascript:get_district_list(339, 0);">宜宾</a>
+                            <a href="javascript:get_district_list(366, 0);">伊犁</a>
+                            <a href="javascript:get_district_list(381, 0);">玉溪</a>
+                        </div>
+                    </li>
+                    <li data-id="22" data-name="Z">
+                        <em>Z</em>
+                        <div class="itme-city">
+                            <a href="javascript:get_district_list(61, 0);">漳州</a>
+                            <a href="javascript:get_district_list(75, 0);">张掖</a>
+                            <a href="javascript:get_district_list(93, 0);">湛江</a>
+                            <a href="javascript:get_district_list(94, 0);">肇庆</a>
+                            <a href="javascript:get_district_list(95, 0);">中山</a>
+                            <a href="javascript:get_district_list(96, 0);">珠海</a>
+                            <a href="javascript:get_district_list(119, 0);">遵义</a>
+                            <a href="javascript:get_district_list(137, 0);">儋州</a>
+                            <a href="javascript:get_district_list(148, 0);">张家口</a>
+                            <a href="javascript:get_district_list(149, 0);">郑州</a>
+                            <a href="javascript:get_district_list(163, 0);">周口</a>
+                            <a href="javascript:get_district_list(164, 0);">驻马店</a>
+                            <a href="javascript:get_district_list(198, 0);">张家界</a>
+                            <a href="javascript:get_district_list(210, 0);">株洲</a>
+                            <a href="javascript:get_district_list(232, 0);">镇江</a>
+                            <a href="javascript:get_district_list(274, 0);">中卫</a>
+                            <a href="javascript:get_district_list(298, 0);">枣庄</a>
+                            <a href="javascript:get_district_list(299, 0);">淄博</a>
+                            <a href="javascript:get_district_list(340, 0);">资阳</a>
+                            <a href="javascript:get_district_list(341, 0);">自贡</a>
+                            <a href="javascript:get_district_list(342, 0);">泸州</a>
+                            <a href="javascript:get_district_list(382, 0);">昭通</a>
+                            <a href="javascript:get_district_list(392, 0);">舟山</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="scrollBar" id="scrollBar">
+                <p id="city_bar" style="top: 64.6184px;"></p>
+            </div>
+            <input name="area_phpName" type="hidden" id="phpName" value="#">
+        </div>
+        </div>
+        </dd>
+            </li>
+</ul>        <div class="user-entry"></div>
+        <div class="ecsc-login" id="ECS_MEMBERZONE">
+        	
+<a href="user.php" class="link-login style-red">请登录</a><a href="#" class="link-regist">注册</a>
+        </div>
+        <ul class="quick-menu fr">
+        	<li>
+            	<div class="dt"><a href="#">我的订单</a></div>
+            </li>
+            <li class="spacer"></li>
+            <li>
+            	<div class="dt"><a href="#">我的浏览</a></div>
+            </li>
+            <li class="spacer"></li>
+            <li>
+            	<div class="dt"><a href="#">我的收藏</a></div>
+            </li>
+            <li class="spacer"></li>
+            <li>
+            	<div class="dt"><a href="#">客户服务</a></div>
+            </li>
+            <li class="spacer"></li>
+            <li class="li_dorpdown">
+            	<div class="dt"><a href="#">促销活动</a><i class="ci-right"><s>◇</s></i></div>
+                <div class="dd dorpdown-layer">
+                	<div class="dd-spacer"></div>                              			            		            			            		            			            	
+                    <div class="item"><a href="#">拍卖活动</a></div>
+     	            <div class="item"><a href="#">优惠活动</a></div>
+                    <div class="item"><a href="#">批发市场</a></div>
+                    <div class="item"><a href="#">超值礼包</a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+function stopss(){
+   return false;
+}
+document.oncontextmenu=stopss;
+</script>
+</body>
+</html> 

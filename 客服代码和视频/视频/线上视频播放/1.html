@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    var s;
+    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+        (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+            (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                    (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+    //以下进行测试
+    if(Sys.firefox||Sys.ie||Sys.opera){
+        document.write('<embed style="display:block;margin:0 auto" width="650" height="465"  align="null" class="edui-faked-video" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://pinpai.nz86.com/plugin/jwplayer/player.swf?file=http://img1.nz86.com/upload/video/system/20180112/1.mp4&autostart=true" type="application/x-shockwave-flash" wmode="Opaque" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true"/>');
+    }
+    else{
+        document.write('<video style="width:650px;height:465px;display:block;padding-top: 200px;position: absolute;left: 50%;margin-left: -450px;" autoplay src="http://img1.nz86.com/upload/video/system/20180112/1.mp4" controls="controls">'+
+            '</video>');
+    };
+</script>
+</html>
